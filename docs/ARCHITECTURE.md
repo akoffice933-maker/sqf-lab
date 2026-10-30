@@ -63,7 +63,7 @@ src/sqflab/          library (installed as the `sqflab` package)
 cpp/src + cpp/build  native engines (built, never committed)
 apps/lottery         reference pool API + client + agent skill
 benchmarks           reproducible measurement scripts and raw JSON
-tests                58 tests: unit, property, end-to-end HTTP, native smoke
+tests                59 tests: unit, property, end-to-end HTTP, native smoke
 research/archive     frozen exploration scripts (see research/README.md)
 docs                 this file plus algorithms, benchmarks, protocol, ethics
 ```
