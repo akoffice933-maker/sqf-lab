@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.c   text diff=cpp
+*.cpp text diff=cpp
+*.h   text diff=cpp
+*.py  text diff=python
+*.md  text
+*.sql text
+*.json text

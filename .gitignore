@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+build/
+dist/
+
+# Native
+cpp/build/
+*.o
+*.so
+*.dylib
+
+# Local state (never commit a scan registry: it is per-campaign data)
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+pool.sqlite3
+registry.json
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+var/

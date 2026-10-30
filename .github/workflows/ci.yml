@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python:
+    name: python ${{ matrix.python }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python: ["3.10", "3.11", "3.12", "3.13"]
+        include:
+          - os: macos-latest
+            python: "3.12"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Lint
+        run: python -m ruff check src tests
+      - name: Tests
+        run: python -m pytest tests -q --durations=10
+
+  native:
+    name: native engines (gcc, portable)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libgmp-dev
+          g++ --version | head -1
+      - name: Build (NATIVE=0: no -march=native, portable numbers)
+        run: make -C cpp NATIVE=0
+      - name: Install package
+        run: python -m pip install -e ".[dev]"
+      - name: Native smoke tests
+        env:
+          SQF_LAB_LIB: ${{ github.workspace }}/cpp/build/libsqf_dual.so
+        run: python -m pytest tests/test_native.py -q
+      - name: Blind native benchmark (2^24 .. 2^28, 1 trial)
+        env:
+          SQF_LAB_LIB: ${{ github.workspace }}/cpp/build/libsqf_dual.so
+        run: |
+          python benchmarks/run_native_benchmark.py --bits 24 28 --trials 1 \
+            --out cpp/build/ci_native_suite.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: native-benchmark
+          path: cpp/build/ci_native_suite.json
+
+  cli:
+    name: cli smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e .
+      - run: |
+          sqflab addr --priv 0x1
+          sqflab p2g clue2
+          sqflab battleship cell --bits 32 --col 3 --row 4

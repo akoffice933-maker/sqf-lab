@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "sqf-lab: Symmetric Quartet Folding laboratory for secp256k1"
+message: "If you use this software or the benchmark methodology, please cite it as below."
+type: software
+authors:
+  - name: "sqf-lab contributors"
+version: 0.1.0
+date-released: "2026-10-30"
+license: MIT
+repository-code: "https://github.com/your-org/sqf-lab"
+keywords:
+  - secp256k1
+  - elliptic curve discrete logarithm
+  - Pollard kangaroo
+  - baby-step giant-step
+  - reproducible benchmarks
+abstract: >
+  Reference implementation and honest benchmark harness for symmetric-quartet
+  baby-step/giant-step search on secp256k1, plus a persistent anti-duplicate
+  scan registry, a multi-herd kangaroo baseline, puzzle reconstruction notes
+  and a fixed schema for reporting measured constants.

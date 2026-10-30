@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sqflab"
+version = "0.1.0"
+description = "Symmetric Quartet Folding laboratory for secp256k1: solvers, honest benchmarks, anti-duplicate registry, puzzle reconstruction"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "sqf-lab contributors" }]
+keywords = ["secp256k1", "ecdlp", "pollard-kangaroo", "bsgs", "bitcoin-puzzles", "cryptanalysis"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: C++",
+  "Topic :: Security :: Cryptography",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "pytest-cov>=4.1", "ruff>=0.5"]
+native = []  # the C++ engines are built with `make -C cpp`
+
+[project.scripts]
+sqflab = "sqflab.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/your-org/sqf-lab"
+Documentation = "https://github.com/your-org/sqf-lab/tree/main/docs"
+Changelog = "https://github.com/your-org/sqf-lab/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+packages = ["sqflab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["error::DeprecationWarning:sqflab.*"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py39"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+# UP006/UP035/UP045/UP037: the package targets Python 3.9, so `typing.Optional`
+# and friends stay; E501 is handled by the formatter.
+ignore = ["E501", "UP006", "UP035", "UP045", "UP037"]
+
+[tool.coverage.run]
+source = ["src/sqflab"]

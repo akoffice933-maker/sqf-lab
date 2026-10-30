@@ -1,0 +1,29 @@
+name: Bug report
+description: Something is broken, wrong or crashes
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks. Please include the exact commit and a minimal reproducer.
+        Numbers that disagree with `docs/` are usually a *benchmark* issue — use the other template.
+  - type: input
+    id: commit
+    attributes: { label: Commit / version, placeholder: "main @ abc1234, sqflab 0.1.0" }
+    validations: { required: true }
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [curve / folding, bsgs, kangaroo, bench harness, registry, pool API, battleship, p2g, cpp engines, docs, ci]
+    validations: { required: true }
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproducer
+      description: Command(s) or a test that fails. Paste the traceback.
+      render: shell
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes: { label: Expected vs actual }
