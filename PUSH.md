@@ -5,7 +5,7 @@ the repository already points at **`akoffice933-maker/sqf-lab`**. The GitHub
 connector is not available in this session, so the push is a two-minute manual
 step. Shell commands are for `bash`.
 
-## 0. Sanity check
+## 0. Sanity check (what publish.sh verifies first)
 
 ```bash
 cd /home/user/sqf-lab
@@ -19,7 +19,42 @@ Nothing sensitive is tracked: `*.sqlite3`, `cpp/build/`, `var/`, `__pycache__`
 are in `.gitignore`, and the registry never stores private keys in the first
 place (only salted `blake2b` fingerprints).
 
-## 1. Create the remote and push (GitHub CLI — recommended)
+## One command (recommended)
+
+`publish.sh` does all of the below idempotently: creates the repository with the
+description, topics and Discussions enabled, pushes `main` and the tag, re-points
+`origin` at the clean HTTPS URL **without storing the token**, and then verifies
+remote `HEAD` against local `HEAD` through the API.
+
+```bash
+cd /home/user/sqf-lab
+./publish.sh --dry-run                 # prints the plan, touches nothing
+GH_TOKEN=ghp_… ./publish.sh            # classic token, scope: repo
+GH_TOKEN=github_pat_… ./publish.sh     # fine-grained: Administration + Contents: RW
+./publish.sh --private                 # private repository
+./publish.sh --ssh                     # push over SSH (API calls still need a token)
+```
+
+If `gh` is installed and logged in, the script picks the token up automatically,
+so a bare `./publish.sh` is enough.
+
+## Alternative: offline transport
+
+Two artefacts sit next to the repository for moving it by hand or pushing from a
+machine without this workspace:
+
+| file | use |
+| --- | --- |
+| `/home/user/sqf-lab-v0.1.0.bundle` | full git history: `git clone sqf-lab-v0.1.0.bundle sqf-lab`, then push from that clone |
+| `/home/user/sqf-lab-v0.1.0.zip` | working tree without `.git`, for a quick drag-and-drop upload |
+
+```bash
+git clone /home/user/sqf-lab-v0.1.0.bundle /tmp/sqf-lab && cd /tmp/sqf-lab
+git remote add origin git@github.com:akoffice933-maker/sqf-lab.git
+git push -u origin main && git push origin --tags
+```
+
+## 1. Create the remote and push (GitHub CLI)
 
 ```bash
 gh auth login                      # once per machine, scope: repo
