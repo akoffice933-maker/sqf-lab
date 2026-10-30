@@ -1,0 +1,265 @@
+{
+  "generated_at": "2026-10-30T06:26:03Z",
+  "trials": [
+    {
+      "solver": "sqf",
+      "bits": 16,
+      "width": 32767,
+      "recovered": true,
+      "verified": true,
+      "ops": 242,
+      "seconds": 0.0070954780001102336,
+      "ops_over_sqrt": 1.3368941577224054,
+      "memory_bytes": 15240,
+      "table_size": 127
+    },
+    {
+      "solver": "sqf",
+      "bits": 16,
+      "width": 32767,
+      "recovered": true,
+      "verified": true,
+      "ops": 144,
+      "seconds": 0.00523197400002573,
+      "ops_over_sqrt": 0.7955072674050676,
+      "memory_bytes": 15240,
+      "table_size": 127
+    },
+    {
+      "solver": "sqf",
+      "bits": 16,
+      "width": 32767,
+      "recovered": true,
+      "verified": true,
+      "ops": 142,
+      "seconds": 0.0052044879998902616,
+      "ops_over_sqrt": 0.784458555357775,
+      "memory_bytes": 15240,
+      "table_size": 127
+    },
+    {
+      "solver": "sqf",
+      "bits": 20,
+      "width": 524287,
+      "recovered": true,
+      "verified": true,
+      "ops": 973,
+      "seconds": 0.024204929000006814,
+      "ops_over_sqrt": 1.3437803793702872,
+      "memory_bytes": 61320,
+      "table_size": 511
+    },
+    {
+      "solver": "sqf",
+      "bits": 20,
+      "width": 524287,
+      "recovered": true,
+      "verified": true,
+      "ops": 688,
+      "seconds": 0.01655564499992579,
+      "ops_over_sqrt": 0.9501756433779626,
+      "memory_bytes": 61320,
+      "table_size": 511
+    },
+    {
+      "solver": "sqf",
+      "bits": 20,
+      "width": 524287,
+      "recovered": true,
+      "verified": true,
+      "ops": 822,
+      "seconds": 0.02033770999992157,
+      "ops_over_sqrt": 1.1352389227568098,
+      "memory_bytes": 61320,
+      "table_size": 511
+    },
+    {
+      "solver": "sqf",
+      "bits": 24,
+      "width": 8388607,
+      "recovered": true,
+      "verified": true,
+      "ops": 2453,
+      "seconds": 0.03215961699993386,
+      "ops_over_sqrt": 0.8469399597836083,
+      "memory_bytes": 245640,
+      "table_size": 2047
+    },
+    {
+      "solver": "sqf",
+      "bits": 24,
+      "width": 8388607,
+      "recovered": true,
+      "verified": true,
+      "ops": 4057,
+      "seconds": 0.06287658600012946,
+      "ops_over_sqrt": 1.40074823352715,
+      "memory_bytes": 245640,
+      "table_size": 2047
+    },
+    {
+      "solver": "sqf",
+      "bits": 24,
+      "width": 8388607,
+      "recovered": true,
+      "verified": true,
+      "ops": 2978,
+      "seconds": 0.03975740999999289,
+      "ops_over_sqrt": 1.028205136663508,
+      "memory_bytes": 245640,
+      "table_size": 2047
+    },
+    {
+      "solver": "kangaroo",
+      "bits": 16,
+      "width": 32767,
+      "recovered": true,
+      "verified": true,
+      "ops": 327,
+      "seconds": 0.02417810300016754,
+      "ops_over_sqrt": 1.806464419732341,
+      "memory_bytes": 0,
+      "table_size": 0
+    },
+    {
+      "solver": "kangaroo",
+      "bits": 16,
+      "width": 32767,
+      "recovered": true,
+      "verified": true,
+      "ops": 160,
+      "seconds": 0.022290505999990273,
+      "ops_over_sqrt": 0.8838969637834084,
+      "memory_bytes": 0,
+      "table_size": 0
+    },
+    {
+      "solver": "kangaroo",
+      "bits": 16,
+      "width": 32767,
+      "recovered": true,
+      "verified": true,
+      "ops": 207,
+      "seconds": 0.02174909700011085,
+      "ops_over_sqrt": 1.1435416968947847,
+      "memory_bytes": 0,
+      "table_size": 0
+    },
+    {
+      "solver": "kangaroo",
+      "bits": 20,
+      "width": 524287,
+      "recovered": true,
+      "verified": true,
+      "ops": 609,
+      "seconds": 0.035675922000109495,
+      "ops_over_sqrt": 0.8410711726993884,
+      "memory_bytes": 0,
+      "table_size": 0
+    },
+    {
+      "solver": "kangaroo",
+      "bits": 20,
+      "width": 524287,
+      "recovered": true,
+      "verified": true,
+      "ops": 925,
+      "seconds": 0.04626146999999037,
+      "ops_over_sqrt": 1.277489055413685,
+      "memory_bytes": 0,
+      "table_size": 0
+    },
+    {
+      "solver": "kangaroo",
+      "bits": 20,
+      "width": 524287,
+      "recovered": true,
+      "verified": true,
+      "ops": 1395,
+      "seconds": 0.053471487000024354,
+      "ops_over_sqrt": 1.9265916024887466,
+      "memory_bytes": 0,
+      "table_size": 0
+    },
+    {
+      "solver": "kangaroo",
+      "bits": 24,
+      "width": 8388607,
+      "recovered": true,
+      "verified": true,
+      "ops": 4914,
+      "seconds": 0.13660126700006003,
+      "ops_over_sqrt": 1.6966420555958626,
+      "memory_bytes": 0,
+      "table_size": 0
+    },
+    {
+      "solver": "kangaroo",
+      "bits": 24,
+      "width": 8388607,
+      "recovered": true,
+      "verified": true,
+      "ops": 1527,
+      "seconds": 0.061194619000161765,
+      "ops_over_sqrt": 0.527222714467823,
+      "memory_bytes": 0,
+      "table_size": 0
+    },
+    {
+      "solver": "kangaroo",
+      "bits": 24,
+      "width": 8388607,
+      "recovered": true,
+      "verified": true,
+      "ops": 8514,
+      "seconds": 0.22602728799984106,
+      "ops_over_sqrt": 2.9396032684866045,
+      "memory_bytes": 0,
+      "table_size": 0
+    }
+  ],
+  "summary": {
+    "sqf@16": {
+      "runs": 3,
+      "verified": 3,
+      "ops_over_sqrt_mean": 0.972,
+      "seconds_mean": 0.0058,
+      "ops_mean": 176
+    },
+    "sqf@20": {
+      "runs": 3,
+      "verified": 3,
+      "ops_over_sqrt_mean": 1.143,
+      "seconds_mean": 0.0204,
+      "ops_mean": 827
+    },
+    "sqf@24": {
+      "runs": 3,
+      "verified": 3,
+      "ops_over_sqrt_mean": 1.092,
+      "seconds_mean": 0.0449,
+      "ops_mean": 3162
+    },
+    "kangaroo@16": {
+      "runs": 3,
+      "verified": 3,
+      "ops_over_sqrt_mean": 1.278,
+      "seconds_mean": 0.0227,
+      "ops_mean": 231
+    },
+    "kangaroo@20": {
+      "runs": 3,
+      "verified": 3,
+      "ops_over_sqrt_mean": 1.348,
+      "seconds_mean": 0.0451,
+      "ops_mean": 976
+    },
+    "kangaroo@24": {
+      "runs": 3,
+      "verified": 3,
+      "ops_over_sqrt_mean": 1.721,
+      "seconds_mean": 0.1413,
+      "ops_mean": 4985
+    }
+  }
+}
