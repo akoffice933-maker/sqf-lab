@@ -4,7 +4,7 @@
 бенчмарк-стенд, постоянный реестр с защитой от повторного прохода,
 воспроизводимая реконструкция пазла и протокол всего, что *не* сработало.
 
-[![CI](https://github.com/your-org/sqf-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/sqf-lab/actions/workflows/ci.yml)
+[![CI](https://github.com/akoffice933-maker/sqf-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/akoffice933-maker/sqf-lab/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-informational.svg)](pyproject.toml)
 
@@ -89,7 +89,7 @@ docs/                алгоритмы, бенчмарки, протокол, �
 ## Быстрый старт
 
 ```bash
-git clone https://github.com/your-org/sqf-lab && cd sqf-lab
+git clone https://github.com/akoffice933-maker/sqf-lab && cd sqf-lab
 python3 -m pip install -e ".[dev]"
 
 make test        # 58 тестов, ~3 с, чистый Python

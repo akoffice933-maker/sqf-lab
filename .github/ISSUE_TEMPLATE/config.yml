@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Security report
-    url: https://github.com/your-org/sqf-lab/security/advisories/new
+    url: https://github.com/akoffice933-maker/sqf-lab/security/advisories/new
     about: Please do not open a public issue for security problems.
   - name: Read the rules first
-    url: https://github.com/your-org/sqf-lab/blob/main/CONTRIBUTING.md
+    url: https://github.com/akoffice933-maker/sqf-lab/blob/main/CONTRIBUTING.md
     about: Claims without measurements are closed by policy.

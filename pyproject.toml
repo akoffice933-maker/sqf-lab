@@ -33,9 +33,9 @@ native = []  # the C++ engines are built with `make -C cpp`
 sqflab = "sqflab.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/your-org/sqf-lab"
-Documentation = "https://github.com/your-org/sqf-lab/tree/main/docs"
-Changelog = "https://github.com/your-org/sqf-lab/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/akoffice933-maker/sqf-lab"
+Documentation = "https://github.com/akoffice933-maker/sqf-lab/tree/main/docs"
+Changelog = "https://github.com/akoffice933-maker/sqf-lab/blob/main/CHANGELOG.md"
 
 [tool.setuptools]
 package-dir = { "" = "src" }

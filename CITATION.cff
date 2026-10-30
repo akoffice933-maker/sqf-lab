@@ -3,11 +3,13 @@ title: "sqf-lab: Symmetric Quartet Folding laboratory for secp256k1"
 message: "If you use this software or the benchmark methodology, please cite it as below."
 type: software
 authors:
-  - name: "sqf-lab contributors"
+  - name: "akoffice933-maker"
+    alias: "akoffice933-maker"
+    website: "https://github.com/akoffice933-maker"
 version: 0.1.0
 date-released: "2026-10-30"
 license: MIT
-repository-code: "https://github.com/your-org/sqf-lab"
+repository-code: "https://github.com/akoffice933-maker/sqf-lab"
 keywords:
   - secp256k1
   - elliptic curve discrete logarithm

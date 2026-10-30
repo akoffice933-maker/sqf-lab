@@ -4,7 +4,7 @@
 benchmark harness, a persistent anti-duplicate scan registry, a reproducible
 puzzle reconstruction, and the paper trail of everything that *didn't* work.
 
-[![CI](https://github.com/your-org/sqf-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/sqf-lab/actions/workflows/ci.yml)
+[![CI](https://github.com/akoffice933-maker/sqf-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/akoffice933-maker/sqf-lab/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-informational.svg)](pyproject.toml)
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-informational.svg)](cpp/)
@@ -89,7 +89,7 @@ docs/                algorithms, benchmarks, protocol, ethics, negative results
 ## Quick start
 
 ```bash
-git clone https://github.com/your-org/sqf-lab && cd sqf-lab
+git clone https://github.com/akoffice933-maker/sqf-lab && cd sqf-lab
 python3 -m pip install -e ".[dev]"
 
 make test                       # 58 tests, ~3 s, pure Python
