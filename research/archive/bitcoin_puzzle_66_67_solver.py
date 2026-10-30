@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 import hashlib
 import time
 from symmetric_quartet_folding import G, P, N, scalar_mult

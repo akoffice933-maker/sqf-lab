@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 #!/usr/bin/env python3
 """
 Path to Greatness (3 LTC) — Verified Cryptanalysis, GitHub Reconnaissance & Explicit Candidate Definitions

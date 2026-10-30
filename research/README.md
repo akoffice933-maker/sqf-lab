@@ -1,7 +1,9 @@
 # `research/archive` — frozen laboratory scripts
 
-These are the original exploration scripts, kept **verbatim** for provenance.
-They are not part of the tested surface and they are not maintained.
+These are the original exploration scripts, kept for provenance. Two
+`# SPDX-...` header lines were prepended to each file for licence compliance;
+everything below them is **verbatim**. They are not part of the tested surface
+and they are not maintained.
 
 What to expect inside:
 

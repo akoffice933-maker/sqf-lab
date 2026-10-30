@@ -193,8 +193,9 @@ reproduction-oriented only.
 MIT © 2026 **akoffice933-maker** — see [LICENSE](LICENSE).
 
 Every source file carries an SPDX header
-(`SPDX-License-Identifier: MIT`), so licence scanners and `reuse` tooling can
-attribute the tree without parsing prose. The [LICENSE](LICENSE) file also spells
+(`SPDX-License-Identifier: MIT`), and `LICENSES/MIT.txt` provides the licence
+text in the layout REUSE-based scanners expect, so attribution works without
+parsing prose. The [LICENSE](LICENSE) file also spells
 out the third-party situation: the `cpp/` engines link GMP (LGPL-3.0+) at build
 time only, and no GMP source is distributed here.
 
