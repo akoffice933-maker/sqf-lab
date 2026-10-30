@@ -78,6 +78,15 @@ def test_persistence_across_reopen(tmp_path):
     assert exported["label"] == "label"
 
 
+def test_widths_above_63_bits_do_not_overflow(registry):
+    """140-bit bounds overflow SQLite's 64-bit CAST; widths are summed in Python."""
+    start = 1 << 139
+    block = registry.claim("puzzle-140", bits=140, start=start, end=start + (1 << 40) - 1)
+    registry.complete(block["block_id"], ops=1 << 40)
+    stats = registry.stats("puzzle-140")
+    assert stats["blocks_by_status"]["SCANNED_LOCKED"]["width"] == 1 << 40
+
+
 def test_exhaustion_raises(registry):
     with pytest.raises(RuntimeError):
         registry.claim("tiny", bits=2, span=1 << 3)

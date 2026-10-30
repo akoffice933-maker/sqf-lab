@@ -177,6 +177,16 @@ inside the loop, and verification performed outside the solver. Constants that
 survive review go into `docs/BENCHMARKS.md` with the machine and compiler
 recorded.
 
+## Field report: a browser lottery, measured
+
+[`docs/FIELD-REPORT-KRACKPOT.md`](docs/FIELD-REPORT-KRACKPOT.md) is an audit of
+`krackpot.io`'s Bitcoin Puzzle #71 client — the payout split, the claim path, and
+one honest bounded sweep. The finding that matters is methodological: the same
+12-way engine reports **35.5 MKeys/s** on a low-range benchmark window and
+**133 kKeys/s** on the real 2^70 floor, because only the benchmark keeps its base
+points in cache. At the real rate, Puzzle #71 is ~141,000 machine-years for a
+50 % chance and the expected value is ~2.4e−12 BTC/h.
+
 ## Ethics and scope
 
 The tooling here searches key spaces that are *published as puzzles* or

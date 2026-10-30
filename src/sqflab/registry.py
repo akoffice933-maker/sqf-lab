@@ -310,19 +310,23 @@ class Registry:
     def stats(self, label: Optional[str] = None) -> Dict[str, object]:
         where, params = ("WHERE label=?", (label,)) if label else ("", ())
         with self._lock:
+            # Widths are summed here, in Python: 140-bit bounds overflow SQLite's
+            # 64-bit CAST and would silently saturate the total.
             rows = self._conn.execute(
-                "SELECT status, COUNT(*), COALESCE(SUM(CAST(end_k AS INTEGER)"
-                " - CAST(start_k AS INTEGER) + 1),0) FROM blocks"
-                f" {where} GROUP BY status",
-                params,
+                f"SELECT status, start_k, end_k FROM blocks {where}", params,
             ).fetchall()
             keys_total = self._conn.execute("SELECT COUNT(*) FROM keys").fetchone()[0]
             dp_total = self._conn.execute(
                 "SELECT COUNT(*) FROM distinguished_points").fetchone()[0]
+        by_status: Dict[str, Dict[str, int]] = {}
+        for status, start_k, end_k in rows:
+            bucket = by_status.setdefault(status, {"count": 0, "width": 0})
+            bucket["count"] += 1
+            bucket["width"] += int(end_k) - int(start_k) + 1
         return {
             "generated_at": _now(),
             "label": label,
-            "blocks_by_status": {row[0]: {"count": row[1], "width": row[2]} for row in rows},
+            "blocks_by_status": by_status,
             "unique_keys_tested": keys_total,
             "distinguished_points": dp_total,
             "anti_duplicate_guarantee": "STRICT_NON_OVERLAPPING_LOCK",
