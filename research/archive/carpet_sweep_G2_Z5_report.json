@@ -1,0 +1,378 @@
+{
+  "quadrant": "Г2..З5 (X in [0.30, 0.80], Y in [0.10, 0.50])",
+  "cells_swept": 20,
+  "anchors_per_ship": 6000,
+  "total_anchors_5_ships": 30000,
+  "total_sqf64_keys_swept": 257823866880000,
+  "total_kangaroo_jumps": 1017600,
+  "total_new_dps": 985,
+  "total_hash160_12way_keys": 4800000,
+  "cells": [
+    {
+      "cell": "Г2",
+      "x_range": [
+        0.3,
+        0.4
+      ],
+      "y_range": [
+        0.1,
+        0.2
+      ],
+      "previously_sunk_ships": [
+        58
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 40,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "Д2",
+      "x_range": [
+        0.4,
+        0.5
+      ],
+      "y_range": [
+        0.1,
+        0.2
+      ],
+      "previously_sunk_ships": [
+        46
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 52,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "Е2",
+      "x_range": [
+        0.5,
+        0.6
+      ],
+      "y_range": [
+        0.1,
+        0.2
+      ],
+      "previously_sunk_ships": [
+        53
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 51,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "Ж2",
+      "x_range": [
+        0.6,
+        0.7
+      ],
+      "y_range": [
+        0.1,
+        0.2
+      ],
+      "previously_sunk_ships": [
+        20,
+        26,
+        130
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 57,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "З2",
+      "x_range": [
+        0.7,
+        0.8
+      ],
+      "y_range": [
+        0.1,
+        0.2
+      ],
+      "previously_sunk_ships": [
+        125
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 62,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "Г3",
+      "x_range": [
+        0.3,
+        0.4
+      ],
+      "y_range": [
+        0.2,
+        0.3
+      ],
+      "previously_sunk_ships": [
+        100
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 55,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "Д3",
+      "x_range": [
+        0.4,
+        0.5
+      ],
+      "y_range": [
+        0.2,
+        0.3
+      ],
+      "previously_sunk_ships": [
+        32,
+        90
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 54,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "Е3",
+      "x_range": [
+        0.5,
+        0.6
+      ],
+      "y_range": [
+        0.2,
+        0.3
+      ],
+      "previously_sunk_ships": [
+        6
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 39,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "Ж3",
+      "x_range": [
+        0.6,
+        0.7
+      ],
+      "y_range": [
+        0.2,
+        0.3
+      ],
+      "previously_sunk_ships": [
+        43
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 57,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "З3",
+      "x_range": [
+        0.7,
+        0.8
+      ],
+      "y_range": [
+        0.2,
+        0.3
+      ],
+      "previously_sunk_ships": [
+        24
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 67,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "Г4",
+      "x_range": [
+        0.3,
+        0.4
+      ],
+      "y_range": [
+        0.3,
+        0.4
+      ],
+      "previously_sunk_ships": [
+        19,
+        42
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 42,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "Д4",
+      "x_range": [
+        0.4,
+        0.5
+      ],
+      "y_range": [
+        0.3,
+        0.4
+      ],
+      "previously_sunk_ships": [
+        17,
+        29,
+        37
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 39,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "Е4",
+      "x_range": [
+        0.5,
+        0.6
+      ],
+      "y_range": [
+        0.3,
+        0.4
+      ],
+      "previously_sunk_ships": [],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 41,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "Ж4",
+      "x_range": [
+        0.6,
+        0.7
+      ],
+      "y_range": [
+        0.3,
+        0.4
+      ],
+      "previously_sunk_ships": [],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 44,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "З4",
+      "x_range": [
+        0.7,
+        0.8
+      ],
+      "y_range": [
+        0.3,
+        0.4
+      ],
+      "previously_sunk_ships": [
+        21
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 55,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "Г5",
+      "x_range": [
+        0.3,
+        0.4
+      ],
+      "y_range": [
+        0.4,
+        0.5
+      ],
+      "previously_sunk_ships": [
+        120
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 39,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "Д5",
+      "x_range": [
+        0.4,
+        0.5
+      ],
+      "y_range": [
+        0.4,
+        0.5
+      ],
+      "previously_sunk_ships": [
+        68,
+        105
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 43,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "Е5",
+      "x_range": [
+        0.5,
+        0.6
+      ],
+      "y_range": [
+        0.4,
+        0.5
+      ],
+      "previously_sunk_ships": [
+        16,
+        115
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 46,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "Ж5",
+      "x_range": [
+        0.6,
+        0.7
+      ],
+      "y_range": [
+        0.4,
+        0.5
+      ],
+      "previously_sunk_ships": [
+        28,
+        55
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 46,
+      "hash160_12way_keys": 240000
+    },
+    {
+      "cell": "З5",
+      "x_range": [
+        0.7,
+        0.8
+      ],
+      "y_range": [
+        0.4,
+        0.5
+      ],
+      "previously_sunk_ships": [
+        47,
+        135
+      ],
+      "sqf64_keys_swept": 12891193344000,
+      "sota_kangaroo_jumps": 50880,
+      "sota_dps_collected": 56,
+      "hash160_12way_keys": 240000
+    }
+  ]
+}

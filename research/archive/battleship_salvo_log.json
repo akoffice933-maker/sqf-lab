@@ -1,0 +1,107 @@
+{
+  "total_keys_swept": 104863600000,
+  "total_kangaroo_jumps": 1000320,
+  "total_dps_saved": 968,
+  "salvos": [
+    {
+      "salvo": 1,
+      "cell": "З5",
+      "x": 0.71213213,
+      "y": 0.47947608,
+      "description": "Прямое попадание #135 (X_135, Y_135 — клетка З5)",
+      "keys_swept": 10486360000,
+      "kangaroo_jumps": 100032,
+      "dps_collected": 99
+    },
+    {
+      "salvo": 2,
+      "cell": "Ж2",
+      "x": 0.62199704,
+      "y": 0.15906602,
+      "description": "Прямое попадание #130 (X_130, Y_130 — клетка Ж2)",
+      "keys_swept": 10486360000,
+      "kangaroo_jumps": 100032,
+      "dps_collected": 100
+    },
+    {
+      "salvo": 3,
+      "cell": "Ж4",
+      "x": 0.62193097,
+      "y": 0.30433548,
+      "description": "Центроид ударной эскадры #120..#135 (квадрант Г2..З5)",
+      "keys_swept": 10486360000,
+      "kangaroo_jumps": 100032,
+      "dps_collected": 97
+    },
+    {
+      "salvo": 4,
+      "cell": "В5",
+      "x": 0.28786787,
+      "y": 0.47947608,
+      "description": "Горизонтальное складывание #135 (1 - X_135, Y_135)",
+      "keys_swept": 10486360000,
+      "kangaroo_jumps": 100032,
+      "dps_collected": 90
+    },
+    {
+      "salvo": 5,
+      "cell": "З6",
+      "x": 0.71213213,
+      "y": 0.52052392,
+      "description": "Вертикальное складывание #135 (X_135, 1 - Y_135)",
+      "keys_swept": 10486360000,
+      "kangaroo_jumps": 100032,
+      "dps_collected": 94
+    },
+    {
+      "salvo": 6,
+      "cell": "Д8",
+      "x": 0.47947608,
+      "y": 0.71213213,
+      "description": "Диагональное складывание #135 (Y_135, X_135 — обмен половин бит)",
+      "keys_swept": 10486360000,
+      "kangaroo_jumps": 100032,
+      "dps_collected": 105
+    },
+    {
+      "salvo": 7,
+      "cell": "Д4",
+      "x": 0.45,
+      "y": 0.35,
+      "description": "Центр главного кластера потопленных кораблей (Д4, Y < 0.5)",
+      "keys_swept": 10486360000,
+      "kangaroo_jumps": 100032,
+      "dps_collected": 94
+    },
+    {
+      "salvo": 8,
+      "cell": "Е3",
+      "x": 0.510209,
+      "y": 0.25,
+      "description": "Центр верхнего полуполя Y < 0.5 (средний бит = 0, Е3)",
+      "keys_swept": 10486360000,
+      "kangaroo_jumps": 100032,
+      "dps_collected": 96
+    },
+    {
+      "salvo": 9,
+      "cell": "Е6",
+      "x": 0.5,
+      "y": 0.5,
+      "description": "Точный центр единого квадрата (0.500000, 0.500000)",
+      "keys_swept": 10486360000,
+      "kangaroo_jumps": 100032,
+      "dps_collected": 111
+    },
+    {
+      "salvo": 10,
+      "cell": "И8",
+      "x": 0.80226721,
+      "y": 0.79988613,
+      "description": "Векторная экстраполяция #130 -> #135 в квадрате",
+      "keys_swept": 10486360000,
+      "kangaroo_jumps": 100032,
+      "dps_collected": 82
+    }
+  ]
+}

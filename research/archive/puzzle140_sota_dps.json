@@ -1,0 +1,349 @@
+{
+  "target_address": "1QKBaU6WAeycb3DbKbLBkX7vJiaS8r42Xo",
+  "pubkey_compressed": "031f6a332d3c5c4f2de2378c012f429cd109ba07d69690c6c701b6bb87860d6640",
+  "total_ec_ops": 15864384,
+  "total_sqf64_keys": 2138450165760000,
+  "total_dps_collected": 15509,
+  "sectors_scanned": [],
+  "distinguished_points_sample": [
+    {
+      "cell": "\u04134",
+      "focus_xy": [
+        0.316664,
+        0.34706
+      ],
+      "anchor_140_hex": "0xa88870000000000000b1b1e000000000000",
+      "x_tag": "0xe9585e2d8c044400",
+      "dist": 5709565922309,
+      "type": "TAME"
+    },
+    {
+      "cell": "\u04144",
+      "focus_xy": [
+        0.458851,
+        0.354076
+      ],
+      "anchor_140_hex": "0xbabba0000000000000b5498000000000000",
+      "x_tag": "0x6190d0c555679000",
+      "dist": 2931510468780,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04154",
+      "focus_xy": [
+        0.55,
+        0.35
+      ],
+      "anchor_140_hex": "0xc66666666666680000b3333333333338000",
+      "x_tag": "0xfb36f5efa317e800",
+      "dist": 22824389525000,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04164",
+      "focus_xy": [
+        0.65,
+        0.35
+      ],
+      "anchor_140_hex": "0xd33333333333340000b3333333333338000",
+      "x_tag": "0x5ded8e7c8def0400",
+      "dist": 22353666729470,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04174",
+      "focus_xy": [
+        0.727539,
+        0.300781
+      ],
+      "anchor_140_hex": "0xdd20000000000000009a000000000000000",
+      "x_tag": "0x8ea697b1b65e5000",
+      "dist": 4611018180391,
+      "type": "TAME"
+    },
+    {
+      "cell": "\u04135",
+      "focus_xy": [
+        0.383274,
+        0.429019
+      ],
+      "anchor_140_hex": "0xb10f22572c497a0000dba861fcb87f08000",
+      "x_tag": "0x2a04a46f0c810c00",
+      "dist": 242684692489364,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04145",
+      "focus_xy": [
+        0.433914,
+        0.4957
+      ],
+      "anchor_140_hex": "0xb78a7e102a66c00000fdcc72d667be60000",
+      "x_tag": "0xdd85c09bbc970000",
+      "dist": 4730801710050,
+      "type": "TAME"
+    },
+    {
+      "cell": "\u04155",
+      "focus_xy": [
+        0.514942,
+        0.446483
+      ],
+      "anchor_140_hex": "0xc1e9a22ae9ebbc0000e49961d9609ac8000",
+      "x_tag": "0x2174ad899a680c00",
+      "dist": 284118055529600,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04165",
+      "focus_xy": [
+        0.667854,
+        0.425722
+      ],
+      "anchor_140_hex": "0xd57c3f300000000000d9f84500000000000",
+      "x_tag": "0xc0e4f20f269b7000",
+      "dist": 5895368405442,
+      "type": "TAME"
+    },
+    {
+      "cell": "\u04175",
+      "focus_xy": [
+        0.712132,
+        0.479476
+      ],
+      "anchor_140_hex": "0xdb272542d107f40000f57de3695ebc20000",
+      "x_tag": "0xc16be8a75de81800",
+      "dist": 298962741412,
+      "type": "TAME"
+    },
+    {
+      "cell": "\u04132",
+      "focus_xy": [
+        0.387617,
+        0.131006
+      ],
+      "anchor_140_hex": "0xb19d6e14000000000043134420000000000",
+      "x_tag": "0xbe9853a7f91fe400",
+      "dist": 3683430043099,
+      "type": "TAME"
+    },
+    {
+      "cell": "\u04142",
+      "focus_xy": [
+        0.461122,
+        0.138017
+      ],
+      "anchor_140_hex": "0xbb060e00000000000046aa2000000000000",
+      "x_tag": "0xd5dbac093d9b5400",
+      "dist": 37379911360198,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04152",
+      "focus_xy": [
+        0.50184,
+        0.123239
+      ],
+      "anchor_140_hex": "0xc03c472000000000003f193600000000000",
+      "x_tag": "0x720bcec4f602c400",
+      "dist": 287763455816268,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04162",
+      "focus_xy": [
+        0.621997,
+        0.159066
+      ],
+      "anchor_140_hex": "0xcf9d995c14d67c0000517119f12f8c08000",
+      "x_tag": "0x8bb91e8113083c00",
+      "dist": 139867983095588,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04172",
+      "focus_xy": [
+        0.77032,
+        0.149781
+      ],
+      "anchor_140_hex": "0xe299db5dbf840400004cb0112f2243bc000",
+      "x_tag": "0x39ef40329e1df800",
+      "dist": 6549846779155,
+      "type": "TAME"
+    },
+    {
+      "cell": "\u04133",
+      "focus_xy": [
+        0.369812,
+        0.278858
+      ],
+      "anchor_140_hex": "0xaf55fc59c335c000008ec67ed2482600000",
+      "x_tag": "0x43e987ac49ae9c00",
+      "dist": 258430675401166,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04143",
+      "focus_xy": [
+        0.402349,
+        0.267036
+      ],
+      "anchor_140_hex": "0xb3802ec84da800000088b8e3d0b7e000000",
+      "x_tag": "0x8e8fc5e38914d800",
+      "dist": 120654427593816,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04153",
+      "focus_xy": [
+        0.5,
+        0.25
+      ],
+      "anchor_140_hex": "0xc0000000000000000080000000000000000",
+      "x_tag": "0x31b5b1833ccbb400",
+      "dist": 212087431831926,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04163",
+      "focus_xy": [
+        0.684796,
+        0.242867
+      ],
+      "anchor_140_hex": "0xd7a7640000000000007c591000000000000",
+      "x_tag": "0x45d7e60f1d140000",
+      "dist": 8022275264006,
+      "type": "TAME"
+    },
+    {
+      "cell": "\u04173",
+      "focus_xy": [
+        0.719971,
+        0.251953
+      ],
+      "anchor_140_hex": "0xdc280000000000000081000000000000000",
+      "x_tag": "0x4517bddace1ee000",
+      "dist": 170457429562832,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04134",
+      "focus_xy": [
+        0.316664,
+        0.34706
+      ],
+      "anchor_140_hex": "0xa88870000000000000b1b1e000000000000",
+      "x_tag": "0x924e7a7ee8114000",
+      "dist": 266029472959610,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04144",
+      "focus_xy": [
+        0.458851,
+        0.354076
+      ],
+      "anchor_140_hex": "0xbabba0000000000000b5498000000000000",
+      "x_tag": "0x8bdba586c5b4e800",
+      "dist": 5792141135727,
+      "type": "TAME"
+    },
+    {
+      "cell": "\u04154",
+      "focus_xy": [
+        0.55,
+        0.35
+      ],
+      "anchor_140_hex": "0xc66666666666680000b3333333333338000",
+      "x_tag": "0x3126d986fee6c000",
+      "dist": 259991084945282,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04164",
+      "focus_xy": [
+        0.65,
+        0.35
+      ],
+      "anchor_140_hex": "0xd33333333333340000b3333333333338000",
+      "x_tag": "0xb1fcc514b82c7000",
+      "dist": 176672762053412,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04174",
+      "focus_xy": [
+        0.727539,
+        0.300781
+      ],
+      "anchor_140_hex": "0xdd20000000000000009a000000000000000",
+      "x_tag": "0x6fa3eb5f01570000",
+      "dist": 260222516896932,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04135",
+      "focus_xy": [
+        0.383274,
+        0.429019
+      ],
+      "anchor_140_hex": "0xb10f22572c497a0000dba861fcb87f08000",
+      "x_tag": "0xbd8a1fbaccc30800",
+      "dist": 87421693009770,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04145",
+      "focus_xy": [
+        0.433914,
+        0.4957
+      ],
+      "anchor_140_hex": "0xb78a7e102a66c00000fdcc72d667be60000",
+      "x_tag": "0x345c79d47599a800",
+      "dist": 165870415936460,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04155",
+      "focus_xy": [
+        0.514942,
+        0.446483
+      ],
+      "anchor_140_hex": "0xc1e9a22ae9ebbc0000e49961d9609ac8000",
+      "x_tag": "0xfe7387b569c38800",
+      "dist": 263404198814412,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04165",
+      "focus_xy": [
+        0.667854,
+        0.425722
+      ],
+      "anchor_140_hex": "0xd57c3f300000000000d9f84500000000000",
+      "x_tag": "0xff0d78b0c8d02800",
+      "dist": 19606953447856,
+      "type": "WILD"
+    },
+    {
+      "cell": "\u04175",
+      "focus_xy": [
+        0.712132,
+        0.479476
+      ],
+      "anchor_140_hex": "0xdb272542d107f40000f57de3695ebc20000",
+      "x_tag": "0x9f3ae6be209ff400",
+      "dist": 8458718851791,
+      "type": "TAME"
+    }
+  ],
+  "board_10x10_cells_completed": 100,
+  "focused_J4_trap_dps": 3850,
+  "focused_J4_quadratic_pairs": 7409325,
+  "exact_160bit_int_anchors_tested": 30000,
+  "all_2176_bit_splices_135_to_140_completed": true,
+  "all_4489_bit_rotations_135_to_140_completed": true,
+  "all_145_withheld_pubkeys_12way_swept": true,
+  "morton_and_2adic_hensel_completed": true,
+  "multideck_2d_salvo_keys_swept": 67239936000000
+}
