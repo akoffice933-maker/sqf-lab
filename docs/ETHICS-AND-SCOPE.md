@@ -28,7 +28,7 @@ this codebase:
 Some material was written during the research phase and stays out of the public
 release, even though it is technically interesting:
 
-* scripts aimed at a specific third-party address holding a large balance from 2009
+* scripts aimed at a specific third-party address from 2009 holding a large balance
   (not a puzzle; not ours) and the datasets they read — the code exists locally
   but is not in this repository or its history;
 * any working exploit against a live service, including the public

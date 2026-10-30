@@ -69,7 +69,7 @@ claims become measurements.
 ### Withheld from the public release
 
 * Five scripts and two datasets whose only purpose was cryptanalysis of a
-  third-party a large balance address from 2009. They are not part of a bounty and
+  third-party address from 2009. They are not part of a bounty and
   not ours; `docs/ETHICS-AND-SCOPE.md` scopes the project to published puzzles
   and keys you own. Git history was rewritten **before the first push**, so the
   material never appears publicly. Remaining comments referencing that side
