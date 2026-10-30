@@ -60,6 +60,20 @@ Numbers in `docs/` are claims. If you can reproduce a row and disagree, open an
 issue with the JSON, the command line and the compiler flags. Corrections are
 cheap; wrong constants are expensive.
 
+## Licensing of contributions
+
+The project is MIT-licensed. By opening a pull request you agree to license your
+contribution under the same terms (`SPDX-License-Identifier: MIT`). New files
+should start with the SPDX header:
+
+```python
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
+```
+
+Do not paste code from GPL/AGPL projects, and do not paste code from
+Stack Overflow without checking its licence (CC BY-SA is not MIT-compatible).
+
 ## Code of conduct
 
 By participating you agree to [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).

@@ -190,4 +190,12 @@ reproduction-oriented only.
 
 ## License
 
-MIT — see [LICENSE](LICENSE). Русская версия: [README.ru.md](README.ru.md).
+MIT © 2026 **akoffice933-maker** — see [LICENSE](LICENSE).
+
+Every source file carries an SPDX header
+(`SPDX-License-Identifier: MIT`), so licence scanners and `reuse` tooling can
+attribute the tree without parsing prose. The [LICENSE](LICENSE) file also spells
+out the third-party situation: the `cpp/` engines link GMP (LGPL-3.0+) at build
+time only, and no GMP source is distributed here.
+
+Русская версия: [README.ru.md](README.ru.md).

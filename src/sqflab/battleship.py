@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 """The "battleship in a single square" model: scheduling, not cryptanalysis.
 
 Every scalar ``k`` of an ``n``-bit puzzle lives in ``[2^(n-1), 2^n)``, i.e. it is

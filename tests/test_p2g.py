@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 from sqflab.p2g import (
     CLUE2_PLAINTEXT,
     SECONDS_OF_DREAM_TRACKS,

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 """Persistent, crash-safe anti-duplicate scan registry (SQLite).
 
 The rule enforced here is the one every collaborative search needs and almost

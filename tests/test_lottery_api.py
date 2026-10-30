@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 """End-to-end test of the reference pool API (real HTTP, real SQLite)."""
 
 import json

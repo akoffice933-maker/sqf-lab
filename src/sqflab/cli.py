@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 """Command line interface: ``python -m sqflab <command>``."""
 
 from __future__ import annotations

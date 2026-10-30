@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 """Smoke test for the C++ engines (skipped when the shared library is absent)."""
 
 import os

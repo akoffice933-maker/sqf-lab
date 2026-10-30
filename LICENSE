@@ -1,6 +1,7 @@
 MIT License
 
-Copyright (c) 2026 sqf-lab contributors
+Copyright (c) 2026 akoffice933-maker
+                   https://github.com/akoffice933-maker
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +20,20 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+Third-party material
+--------------------
+
+The `research/archive/` directory contains exploration scripts written for this
+project during its research phase; they are covered by the same MIT terms.
+
+The `cpp/src/` engine sources were written for this project and are likewise
+covered by the same MIT terms. They link against the GNU MP library (LGPL-3.0
+or later) at build time only; no GMP source is distributed here, so the
+resulting shared objects remain under the MIT terms above, subject to GMP's
+LGPL obligations for the GMP library itself.
+
+Bitcoin puzzle keys, addresses and transaction data referenced in `docs/` and
+`research/archive/` are public blockchain facts, not licensed content.

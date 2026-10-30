@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 """Pollard's kangaroo (lambda) method with multiple herds.
 
 Kangaroo is the memory-lean alternative to BSGS: ``O(sqrt(W))`` group operations

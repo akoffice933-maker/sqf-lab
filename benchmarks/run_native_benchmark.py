@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 #!/usr/bin/env python3
 """Blind benchmark of the native engines (SQF-64 vs RCKangaroo vs classic kangaroo).
 

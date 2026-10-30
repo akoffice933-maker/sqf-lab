@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 """Honest blind-benchmark harness.
 
 Rules baked into the harness (they exist because every other benchmark of this

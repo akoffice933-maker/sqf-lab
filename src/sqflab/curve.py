@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 """Pure-Python ``secp256k1`` arithmetic used by every solver in this package.
 
 Everything here is intentionally dependency-free and side-effect free so that the

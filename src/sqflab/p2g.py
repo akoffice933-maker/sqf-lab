@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 """``path-to-greatness-3ltc`` -- verified clue decoders (reconstruction, not a solve).
 
 The treasure hunt publishes eight clues that fold, pairwise, into a 32-byte AES

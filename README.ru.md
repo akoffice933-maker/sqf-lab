@@ -155,4 +155,12 @@ AES-ключ до сих пор неизвестен**: проверено 37 37
 
 ## Лицензия
 
-MIT — см. [LICENSE](LICENSE). English version: [README.md](README.md).
+MIT © 2026 **akoffice933-maker** — см. [LICENSE](LICENSE).
+
+Каждый исходный файл содержит SPDX-заголовок
+(`SPDX-License-Identifier: MIT`), поэтому лицензионные сканеры и `reuse`
+определяют принадлежность без разбора текста. В [LICENSE](LICENSE) отдельно
+описаны сторонние компоненты: движки `cpp/` линкуются с GMP (LGPL-3.0+) только
+на этапе сборки, исходники GMP в репозиторий не входят.
+
+English version: [README.md](README.md).

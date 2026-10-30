@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,13 +8,13 @@ version = "0.1.0"
 description = "Symmetric Quartet Folding laboratory for secp256k1: solvers, honest benchmarks, anti-duplicate registry, puzzle reconstruction"
 readme = "README.md"
 requires-python = ">=3.9"
-license = { text = "MIT" }
-authors = [{ name = "sqf-lab contributors" }]
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "akoffice933-maker", email = "253819023+akoffice933-maker@users.noreply.github.com" }]
 keywords = ["secp256k1", "ecdlp", "pollard-kangaroo", "bsgs", "bitcoin-puzzles", "cryptanalysis"]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Science/Research",
-  "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",

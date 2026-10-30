@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 """sqf-lab: Symmetric Quartet Folding laboratory for ``secp256k1``.
 
 Public surface

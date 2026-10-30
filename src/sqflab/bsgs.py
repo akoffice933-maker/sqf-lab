@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 """SQF-BSGS: the symmetric-quartet baby-step/giant-step solver.
 
 The solver is deliberately small, readable and *honest*: every group operation

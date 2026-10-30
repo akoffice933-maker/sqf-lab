@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 akoffice933-maker <https://github.com/akoffice933-maker>
 
 from sqflab.curve import G, point_add, scalar_mult
 from sqflab.folding import (
