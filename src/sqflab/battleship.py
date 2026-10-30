@@ -83,9 +83,16 @@ def square_xy_to_key(bits: int, x: float, y: float) -> int:
 
 
 def cell_label(x: float, y: float, board: int = 10) -> str:
-    """Board label (``A1`` .. ``J10``) of a normalised point."""
-    col = min(int(x * board), board - 1)
-    row = min(int(y * board), board - 1) + 1
+    """Board label (``A1`` .. ``J10``) of a normalised point.
+
+    The ``1e-12`` nudge absorbs float round-off at exact cell boundaries
+    (``x = col/board`` computed as ``0.09999999999999999``): without it a key
+    sitting on a boundary would be labelled with the neighbouring cell, which is
+    exactly the kind of off-by-one that makes a coverage map lie.
+    """
+    eps = 1e-12
+    col = min(int(x * board + eps), board - 1)
+    row = min(int(y * board + eps), board - 1) + 1
     return f"{COLUMNS[col % len(COLUMNS)]}{row}"
 
 
@@ -94,10 +101,12 @@ def cell_bounds(bits: int, col: int, row: int, board: int = 10) -> Tuple[int, in
     hx, hy = _split(bits)
     span_x = 1 << hx
     span_y = 1 << hy
-    x_lo = (col * span_x) // board
-    x_hi = ((col + 1) * span_x) // board - 1
-    y_lo = (row * span_y) // board
-    y_hi = ((row + 1) * span_y) // board - 1
+    # ceil(lower edge) and floor(upper edge): the cells then tile the grid with
+    # no gap and no overlap, and every integer in [lo, hi] labels as ``col``.
+    x_lo = -((-col * span_x) // board)
+    x_hi = ((col + 1) * span_x - 1) // board
+    y_lo = -((-row * span_y) // board)
+    y_hi = ((row + 1) * span_y - 1) // board
     start = (1 << (bits - 1)) + (x_lo << hy) + y_lo
     end = (1 << (bits - 1)) + (x_hi << hy) + y_hi
     return start, end

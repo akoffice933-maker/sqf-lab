@@ -28,7 +28,7 @@ claims become measurements.
 * `sqflab.cli` — `addr`, `solve`, `bench`, `registry`, `p2g`, `battleship`.
 * `cpp/` — C++17/OpenMP engines with a portable `Makefile` (`NATIVE=0` for CI).
 * `apps/lottery/api.py` — reference HTTP pool with an end-to-end test.
-* 58 tests, GitHub Actions CI (Python 3.10–3.13 + native build).
+* 59 tests, GitHub Actions CI (Python 3.10–3.13 + native build).
 
 ### Fixed
 
@@ -43,6 +43,11 @@ claims become measurements.
   5–29·√W, frequent failures). Replaced by a spread table with mean `√W/2`, plus
   per-herd jump salts (without salts the herds are correlated and the success
   rate collapses to 75%).
+* **Cell boundary off-by-one.** ``cell_bounds`` used floor on both edges, so the
+  key sitting exactly on a cell edge could be labelled with the neighbouring
+  cell (and a lease could overlap by one scalar). Edges are now `ceil`/`floor`
+  and `cell_label` absorbs float round-off; a deterministic sweep over all 100
+  cells × 4 corners guards it.
 * **Registry threading.** `sqlite3` connections created in one thread rejected
   use from HTTP worker threads; added `check_same_thread=False` plus an internal
   RLock around every statement.

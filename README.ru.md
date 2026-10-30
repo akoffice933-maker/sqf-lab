@@ -69,7 +69,7 @@
 ## Что внутри
 
 ```
-src/sqflab/          чистый типизированный core без зависимостей (58 тестов)
+src/sqflab/          чистый типизированный core без зависимостей (59 тестов)
 ├── curve.py         групповая арифметика secp256k1, SEC1, Base58/WIF, hash160
 ├── folding.py       примитивы SQF: зеркальные кратные, x-only таблица квартетов
 ├── bsgs.py          решатель SQF-BSGS со счётчиками внутри циклов
@@ -92,7 +92,7 @@ docs/                алгоритмы, бенчмарки, протокол, �
 git clone https://github.com/akoffice933-maker/sqf-lab && cd sqf-lab
 python3 -m pip install -e ".[dev]"
 
-make test        # 58 тестов, ~3 с, чистый Python
+make test        # 59 тестов, ~3 с, чистый Python
 make native      # сборка C++ движков в cpp/build
 make test-all    # тот же набор + smoke-тесты нативной библиотеки
 ```

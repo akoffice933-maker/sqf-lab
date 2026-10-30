@@ -69,7 +69,7 @@ Two honest observations, both visible in the table:
 ## What's inside
 
 ```
-src/sqflab/          clean, typed, dependency-free core (58 tests)
+src/sqflab/          clean, typed, dependency-free core (59 tests)
 ├── curve.py         secp256k1 group law, SEC1, Base58/WIF, hash160
 ├── folding.py       SQF primitives: mirror multiples, x-only quartet table
 ├── bsgs.py          SQF-BSGS solver with in-loop operation counters
@@ -92,7 +92,7 @@ docs/                algorithms, benchmarks, protocol, ethics, negative results
 git clone https://github.com/akoffice933-maker/sqf-lab && cd sqf-lab
 python3 -m pip install -e ".[dev]"
 
-make test                       # 58 tests, ~3 s, pure Python
+make test                       # 59 tests, ~3 s, pure Python
 make native                     # build the C++ engines into cpp/build
 make test-all                   # same suite plus the native smoke tests
 ```

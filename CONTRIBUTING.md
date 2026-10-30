@@ -32,7 +32,7 @@ that would be a working exploit against a host you do not own. See
 
 ```bash
 python3 -m pip install -e ".[dev]"
-make test          # 58 tests, ~3 s
+make test          # 59 tests, ~3 s
 make lint
 make native NATIVE=0 && make test-all
 ```

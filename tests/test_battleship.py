@@ -51,6 +51,32 @@ def test_every_key_falls_inside_a_consistent_cell():
         assert start <= k <= end, "the reported cell must contain the key"
 
 
+def test_cell_boundaries_are_exact_for_all_100_cells():
+    """Deterministic sweep: every corner key of every cell labels correctly.
+
+    This is the regression test for the float-boundary off-by-one: without the
+    ceil/floor edges and the epsilon in ``cell_label`` a key sitting exactly on a
+    cell edge was labelled with the neighbouring cell (and the random test above
+    failed roughly one run in fifty).
+    """
+    bits = 24
+    base = 1 << (bits - 1)
+    free = bits - 1
+    hy = free // 2
+    hx = free - hy
+    span_x, span_y = 1 << hx, 1 << hy
+    for col in range(10):
+        for row in range(10):
+            start, end = cell_bounds(bits, col, row)
+            x_edges = {-((-col * span_x) // 10), ((col + 1) * span_x - 1) // 10}
+            y_edges = {-((-row * span_y) // 10), ((row + 1) * span_y - 1) // 10}
+            for x_int in x_edges:
+                for y_int in y_edges:
+                    k = base + (x_int << hy) + y_int
+                    assert start <= k <= end
+                    assert cell_label(*key_to_square_xy(bits, k)) == f"{'ABCDEFGHIJ'[col]}{row + 1}"
+
+
 def test_morton_roundtrip():
     for x, y in [(0, 0), (3, 1), (7, 15), (255, 128)]:
         assert morton_decode(morton_encode(x, y, 8), 8) == (x, y)
