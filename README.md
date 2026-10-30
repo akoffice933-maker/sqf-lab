@@ -181,7 +181,9 @@ recorded.
 
 The tooling here searches key spaces that are *published as puzzles* or
 *owned by the person running the search*. [`docs/ETHICS-AND-SCOPE.md`](docs/ETHICS-AND-SCOPE.md)
-explains the line: none of it is intended for third-party wallets, and the
+explains the line: none of it is intended for third-party wallets (which is why
+address-specific scripts and datasets from the research phase were withheld from
+this release, and the git history was rewritten before the first push), and the
 repository deliberately does **not** contain a working exploit for the live
 `stealmybitcoin.com` challenge — the analysis of `PHP2Shell`
 (`CVE-2026-109618` / `CVE-2026-109619`) in

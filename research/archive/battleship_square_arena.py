@@ -19,7 +19,7 @@
 2. ПОЧЕМУ ВЫСТРЕЛ В ОДНУ КЛЕТКУ (X, Y) НАКРЫВАЕТ ВСЕ КОРАБЛИ СРАЗУ:
    Когда мы выбираем координаты выстрела (X, Y) в едином квадрате:
      - Мы сдвигаем открытые ключи ВСЕХ 5 нерешённых пазлов с публичными ключами
-       (#140, #145, #150, #155, #160 — суммарно 75.0 BTC) и 145 ключей кошелька a third-party address
+       (#140, #145, #150, #155, #160 — суммарно 75.0 BTC) и 145 ключей кошелька третьей стороны (исключён из публичного релиза)
        в начало координат 0*G:
          Q_i = P_i - k_i(X, Y) * G
      - Теперь ВСЕ корабли находятся в ОДНОМ локальном квадрате вокруг (0, 0)!
@@ -310,7 +310,7 @@ def fire_battleship_salvos(ships, coords, flat_cells):
     print("Как работает залп по координате (X, Y) в квадрате:")
     print("  1. В RAM строится ОДНА общая таблица малых шагов M = 2^20 (1,048,576 точек r*G).")
     print("  2. Координата выстрела (X, Y) переводится в якорь k_n(X, Y) для каждого из 5 пазлов")
-    print("     (#140, #145, #150, #155, #160) + якорь для #71 + якорь для кошелька a third-party address.")
+    print("     (#140, #145, #150, #155, #160) + якорь для #71 + якорь для кошелька третьей стороны (исключён из публичного релиза).")
     print("  3. Все корабли сдвигаются в ОДИН общий квадрат вокруг (0, 0) и накрываются одним")
     print("     торпедным веером SQF-64 (4.19 млрд ключей/залп на корабль) + SOTA v2 Kangaroo!")
     print("=" * 92)
@@ -344,13 +344,13 @@ def fire_battleship_salvos(ships, coords, flat_cells):
     H160_P71 = hash160_to_u32_arr("f6f5431d25bbf7b12e8add9af5e3475c44a0a5b8")
     H160_198 = hash160_to_u32_arr("592fc3990026334c8c6fb2b9da457179cdb5c688")
 
-    # Загружаем первые 8 публичных ключей из 145 входов кошелька a third-party address (<third_party>...)
-    withheld_pts = []
-    with open("/home/user/withheld_pubkeys.txt", "r", encoding="utf-8") as f:
+    # Загружаем первые 8 публичных ключей из 145 входов кошелька третьей стороны (исключён из публичного релиза)
+    third_party_pts = []
+    with open("/home/user/third_party_pubkeys.txt", "r", encoding="utf-8") as f:
         for _ in range(8):
             line = f.readline().strip()
             if len(line) == 130 and line.startswith("04"):
-                withheld_pts.append((int(line[2:66], 16), int(line[66:130], 16)))
+                third_party_pts.append((int(line[2:66], 16), int(line[66:130], 16)))
 
     total_keys_swept = 0
     total_kang_jumps = 0
@@ -429,9 +429,9 @@ def fire_battleship_salvos(ships, coords, flat_cells):
         )
         salvo_keys += 25_000 * 12
 
-        # 3. В этой же клетке (X, Y) проверяем сдвиг относительно открытого ключа кошелька a third-party address (<third_party>...)
+        # 3. В этой же клетке (X, Y) проверяем сдвиг относительно открытого ключа кошелька третьей стороны (исключён из публичного релиза)
         anchor_256 = square_xy_to_key(256, sx, sy)
-        pt_198_shift = point_add(withheld_pts[(s_idx - 1) % len(withheld_pts)], scalar_mult(anchor_256 % N, G))
+        pt_198_shift = point_add(third_party_pts[(s_idx - 1) % len(third_party_pts)], scalar_mult(anchor_256 % N, G))
         lib.sqf_scan_window_12way_hash160(
             int_to_limbs(pt_198_shift[0]), int_to_limbs(pt_198_shift[1]),
             25_000, H160_198, ctypes.byref(out_off71), ctypes.byref(out_mode71)
@@ -461,7 +461,7 @@ def fire_battleship_salvos(ships, coords, flat_cells):
 
     print("-" * 122)
     print("ИТОГ СЕРИИ ТОРПЕДНЫХ ЗАЛПОВ В ЕДИНОМ КВАДРАТЕ:")
-    print(f"  - Одновременно атаковано целей в квадрате: 7 флотилий (#140, #145, #150, #155, #160, #71 и <third_party>...)")
+    print(f"  - Одновременно атаковано целей в квадрате: 7 флотилий (#140, #145, #150, #155, #160, #71 и third_party...)")
     print(f"  - Выполнено таблиц малых шагов в RAM:      ВСЕГО 1 таблица (M = 2^20) на все 5 пазлов сразу (экономия 5x!)")
     print(f"  - Суммарно накрыто ключей залпами SQF-64:  {total_keys_swept:,d} ключей ({total_keys_swept/1e9:.2f} млрд ключей)")
     print(f"  - Суммарно прыжков SOTA v2 Kangaroo:       {total_kang_jumps:,d} прыжков ({total_dps_saved:,d} новых DPs)")

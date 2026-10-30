@@ -66,6 +66,15 @@ claims become measurements.
 * `p2g_3ltc_breakthroughs.py` became `sqflab.p2g`, with the Clue 2 decoder now
   asserted at import time.
 
+### Withheld from the public release
+
+* Five scripts and two datasets whose only purpose was cryptanalysis of a
+  third-party a large balance address from 2009. They are not part of a bounty and
+  not ours; `docs/ETHICS-AND-SCOPE.md` scopes the project to published puzzles
+  and keys you own. Git history was rewritten **before the first push**, so the
+  material never appears publicly. Remaining comments referencing that side
+  quest were redacted to `third_party`.
+
 ### Known limitations
 
 * The 32-byte AES key of `path-to-greatness-3ltc` is still unknown

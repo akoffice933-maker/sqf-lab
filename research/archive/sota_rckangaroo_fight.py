@@ -20,7 +20,7 @@
      самый младший нерешённый пазл с открытым ключом после падения #135 (SOTA v2 Kangaroo + DP DB + SQF-64).
    - Цель №2: Bitcoin Puzzle #71 (1PWo3JeB9jrGwfHDNpdGK54CRas7fsVzXU, 7.1 BTC) —
      самый младший нерешённый пазл без публичного ключа (12-way GLV + Mirror HASH160).
-   - Цель №3: Кошелёк a third-party address (<third-party address withheld>, 22.02.2009) —
+   - Цель №3: Кошелёк a withheld third-party address (<third-party address withheld>, 22.02.2009) —
      атака по 145 публичным ключам, ECDSA SIGHASH_ALL и OpenSSL 0.9.8h.
 """
 
@@ -352,9 +352,9 @@ def run_live_campaign_puzzle_140():
     return dp_db
 
 
-def run_live_campaign_puzzle_71_and_<third_party>():
+def run_live_campaign_puzzle_71_and_third_party():
     print("=" * 90)
-    print("ЧАСТЬ 3. БОЕВОЕ СКАНИРОВАНИЕ PUZZLE #71 (БЕЗ PUBKEY) И КОШЕЛЬКА a third-party address (<third_party>...)")
+    print("ЧАСТЬ 3. БОЕВОЕ СКАНИРОВАНИЕ PUZZLE #71 (БЕЗ PUBKEY) И КОШЕЛЬКА a withheld third-party address")
     print("=" * 90)
 
     # 1. Bitcoin Puzzle #71 (1PWo3JeB9jrGwfHDNpdGK54CRas7fsVzXU)
@@ -388,11 +388,11 @@ def run_live_campaign_puzzle_71_and_<third_party>():
         f"({hex(center_71)}) за {dt_71:.3f}s ({rate_71:.2f} MKeys/s)"
     )
 
-    # 2. Кошелёк a third-party address: <third-party address withheld>
+    # 2. Кошелёк a withheld third-party address: <third-party address withheld>
     # HASH160: 592fc3990026334c8c6fb2b9da457179cdb5c688
     H160_198 = hash160_to_u32_arr("592fc3990026334c8c6fb2b9da457179cdb5c688")
     # Используем первый публичный ключ из 145 входов кошелька (Tx #1, 22.02.2009) как якорь
-    with open("/home/user/withheld_pubkeys.txt", "r", encoding="utf-8") as f:
+    with open("/home/user/third_party_pubkeys.txt", "r", encoding="utf-8") as f:
         first_pub_hex = f.readline().strip()
     if len(first_pub_hex) == 130 and first_pub_hex.startswith("04"):
         P_withheld_0 = (int(first_pub_hex[2:66], 16), int(first_pub_hex[66:130], 16))
@@ -411,7 +411,7 @@ def run_live_campaign_puzzle_71_and_<third_party>():
     rate_198 = (keys_198 / dt_198) / 1e6
 
     print(
-        f"  [a third-party address  | <third-party address withheld>] "
+        f"  [a withheld third-party address  | <third-party address withheld>] "
         f"Проверено {keys_198:,d} ключей (12-way GLV+Mirror относительно PubKey #1 кошелька) "
         f"за {dt_198:.3f}s ({rate_198:.2f} MKeys/s)"
     )
@@ -421,4 +421,4 @@ def run_live_campaign_puzzle_71_and_<third_party>():
 if __name__ == "__main__":
     bench_res = run_blind_sota_rckangaroo_benchmark()
     dp_db = run_live_campaign_puzzle_140()
-    run_live_campaign_puzzle_71_and_<third_party>()
+    run_live_campaign_puzzle_71_and_third_party()

@@ -261,12 +261,12 @@ def run_southern_corridor_and_focused_swarm():
         )
     print("-" * 92)
 
-    # Дополнительно проверяем 12 горячих клеток Южного Коридора сканером 12-way HASH160 (#71 и a third-party address):
+    # Дополнительно проверяем 12 горячих клеток Южного Коридора сканером 12-way HASH160 (#71 и a withheld third-party address):
     H160_P71 = hash160_to_u32_arr("f6f5431d25bbf7b12e8add9af5e3475c44a0a5b8")
     H160_198 = hash160_to_u32_arr("592fc3990026334c8c6fb2b9da457179cdb5c688")
-    with open("/home/user/withheld_pubkeys.txt", "r", encoding="utf-8") as f:
-        withheld_hex = [f.readline().strip() for _ in range(20)]
-    withheld_pts = [(int(h[2:66], 16), int(h[66:130], 16)) for h in withheld_hex]
+    with open("/home/user/third_party_pubkeys.txt", "r", encoding="utf-8") as f:
+        third_party_hex = [f.readline().strip() for _ in range(20)]
+    third_party_pts = [(int(h[2:66], 16), int(h[66:130], 16)) for h in third_party_hex]
 
     south_h160_keys = 0
     for idx_h, (c, r) in enumerate(sorted(hot_south_coords)):
@@ -281,7 +281,7 @@ def run_southern_corridor_and_focused_swarm():
             15_000, H160_P71, ctypes.byref(out_o71), ctypes.byref(out_m71)
         )
         ak256 = square_xy_to_key(256, fx, fy)
-        pt198 = point_add(withheld_pts[idx_h], scalar_mult(ak256 % N, G))
+        pt198 = point_add(third_party_pts[idx_h], scalar_mult(ak256 % N, G))
         lib.sqf_scan_window_12way_hash160(
             int_to_limbs(pt198[0]), int_to_limbs(pt198[1]),
             15_000, H160_198, ctypes.byref(out_o71), ctypes.byref(out_m71)

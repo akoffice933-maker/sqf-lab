@@ -10,7 +10,7 @@ What to expect inside:
 * Russian comments and console output;
 * hardcoded `/home/user/...` paths;
 * scripts that import each other by filename (`from honest_4point_audit import …`);
-* one-off analyses of specific Bitcoin puzzles, the a third-party address address, the
+* one-off analyses of specific Bitcoin puzzles, the a withheld third-party address, the
   `path-to-greatness` hunt, and various folding variants that were later
   superseded.
 
@@ -36,5 +36,5 @@ What to expect inside:
 | `p2g_3ltc_breakthroughs.py` | `src/sqflab/p2g.py` |
 | `ai_puzzle_lottery_server.py` | `src/sqflab/registry.py` + `apps/lottery/api.py` |
 
-Data files (`withheld_*.txt`, `*_dps.json`, `*_report.json`) are included because
+Data files (`*_dps.json`, `*_report.json`, the puzzle key tables) are included because
 they are the inputs of published measurements.

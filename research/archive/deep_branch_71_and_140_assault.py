@@ -7,7 +7,7 @@
   1) ПОЛНЫЙ ПЕРЕБОР ВСЕХ 2,176 БИТОВЫХ ВСТАВОК (BIT-SPLICE) #135 -> #140..#160
      И ГЛУБОКИЙ РОЙ SOTA v2 KANGAROO ПО 8 ВЕТКАМ fx = 000b..111b
   2) МАССИРОВАННЫЙ 35-БИТНЫЙ ЦЕЛОЧИСЛЕННЫЙ ШТУРМ PUZZLE #71 (h_X(70) == h_X(71) == 35 БИТ!)
-     И ВСЕХ 145 ПУБЛИЧНЫХ КЛЮЧЕЙ КОШЕЛЬКА a third-party address (<third-party address withheld>)
+     И ВСЕХ 145 ПУБЛИЧНЫХ КЛЮЧЕЙ КОШЕЛЬКА a withheld third-party address (<third-party address withheld>)
 ===========================================================================================
 Математическая идея «Полного Битового Сплайсинга (Bit-Splice Exhaustion)»:
   - У вскрытого Puzzle #135 координаты в квадрате (X_135, Y_135) имеют ровно (67 бит, 67 бит).
@@ -302,10 +302,10 @@ def run_deep_branch_71_and_140_assault():
 
     # =========================================================================
     # УДАР 2. МАССИРОВАННЫЙ 35-БИТНЫЙ ЦЕЛОЧИСЛЕННЫЙ ШТУРМ PUZZLE #71 (50 ЯДЕР)
-    # И ВСЕХ 145 ПУБЛИЧНЫХ КЛЮЧЕЙ КОШЕЛЬКА a third-party address (<third-party address withheld>)
+    # И ВСЕХ 145 ПУБЛИЧНЫХ КЛЮЧЕЙ КОШЕЛЬКА a withheld third-party address (<third-party address withheld>)
     # =========================================================================
     print("\n" + "=" * 116)
-    print(" УДАР 2. ГЛУБОКИЙ 35-БИТНЫЙ ШТУРМ PUZZLE #71 (50 ТОЧНЫХ ЯДЕР h_X=35, h_Y=35) И ВСЕХ 145 КЛЮЧЕЙ a third-party address")
+    print(" УДАР 2. ГЛУБОКИЙ 35-БИТНЫЙ ШТУРМ PUZZLE #71 (50 ТОЧНЫХ ЯДЕР h_X=35, h_Y=35) И ВСЕХ 145 КЛЮЧЕЙ a withheld third-party address")
     print("=" * 116)
 
     H160_P71 = hash160_to_u32_arr("f6f5431d25bbf7b12e8add9af5e3475c44a0a5b8")
@@ -350,14 +350,14 @@ def run_deep_branch_71_and_140_assault():
     p71_nuclei.extend(extra_15)
     assert len(p71_nuclei) == 50
 
-    # Загружаем все 145 уникальных открытых ключей из кошелька a third-party address (<third_party>...)
-    with open("/home/user/withheld_pubkeys.txt", "r", encoding="utf-8") as f:
-        withheld_lines = [line.strip() for line in f if len(line.strip()) == 130 and line.startswith("04")][:145]
-    withheld_pts = [(int(h[2:66], 16), int(h[66:130], 16)) for h in withheld_lines]
+    # Загружаем все 145 уникальных открытых ключей из кошелька третьей стороны (исключён из публичного релиза)
+    with open("/home/user/third_party_pubkeys.txt", "r", encoding="utf-8") as f:
+        third_party_lines = [line.strip() for line in f if len(line.strip()) == 130 and line.startswith("04")][:145]
+    third_party_pts = [(int(h[2:66], 16), int(h[66:130], 16)) for h in third_party_lines]
 
     t_p71_0 = time.perf_counter()
     p71_keys_checked = 0
-    withheld_keys_checked = 0
+    third_party_keys_checked = 0
 
     for idx_n, (lbl, x71_v, y71_v) in enumerate(p71_nuclei):
         ak71 = exact_join_xy(71, x71_v, y71_v)
@@ -373,22 +373,22 @@ def run_deep_branch_71_and_140_assault():
         if hit71 == 1:
             print(f"[!!!] НАЙДЕН КЛЮЧ PUZZLE #71: {hex(ak71)} offset={out_o.value} [!!!]")
 
-    # И проходим по ВСЕМ 145 открытым ключам кошелька a third-party address (<third_party>...):
-    for idx_h, h_pt in enumerate(withheld_pts):
+    # И проходим по ВСЕМ 145 открытым ключам кошелька третьей стороны (исключён из публичного релиза):
+    for idx_h, h_pt in enumerate(third_party_pts):
         out_o = ctypes.c_int64(0)
         out_m = ctypes.c_int(0)
         hit198 = lib.sqf_scan_window_12way_hash160(
             int_to_limbs(h_pt[0]), int_to_limbs(h_pt[1]),
             10_000, H160_198, ctypes.byref(out_o), ctypes.byref(out_m)
         )
-        withheld_keys_checked += 10_000 * 12
+        third_party_keys_checked += 10_000 * 12
         if hit198 == 1:
-            print(f"[!!!] НАЙДЕН КЛЮЧ a third-party address (<third_party>...) ОТ ВХОДА #{idx_h+1}: offset={out_o.value} [!!!]")
+            print(f"[!!!] НАЙДЕН КЛЮЧ a withheld third-party address ОТ ВХОДА #{idx_h+1}: offset={out_o.value} [!!!]")
 
     dt_p71 = time.perf_counter() - t_p71_0
-    total_h160_batch = p71_keys_checked + withheld_keys_checked
+    total_h160_batch = p71_keys_checked + third_party_keys_checked
     print(f"  [+] Проверено 50 точных 35-битных ядер Puzzle #71:            {p71_keys_checked:>12,d} ключей (12-way GLV+Mirror HASH160)")
-    print(f"  [+] Проверено ВСЕ 145 входов кошелька a third-party address (<third_party>...): {withheld_keys_checked:>12,d} ключей (12-way GLV+Mirror HASH160)")
+    print(f"  [+] Проверено ВСЕ 145 входов кошелька третьей стороны (исключён из публичного релиза): {third_party_keys_checked:>12,d} ключей (12-way GLV+Mirror HASH160)")
     print(f"  [+] Итого по 12-way HASH160 за {dt_p71:.2f}s:                        {total_h160_batch:>12,d} полных SHA256+RIPEMD160 проверок!")
 
     # Обновляем глобальную базу Distinguished Points и сохраняем общий баланс

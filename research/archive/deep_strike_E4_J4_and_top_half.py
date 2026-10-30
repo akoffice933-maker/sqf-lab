@@ -28,7 +28,7 @@
       Строка 1 (А1..К1, где стоял #67 в З1), левый фланг (А2..В5, где стоял #66 в В2),
       правый фланг (И2..К5, где стояли #63 и #64 в К4).
       По 200 узлов на каждую из 30 клеток = 6,000 узлов на корабль = 30,000 узлов на 5 флагманов =
-      257.82 ТРИЛЛИОНА ключей + SOTA v2 Kangaroo + 12-way HASH160 (#71 и a third-party address).
+      257.82 ТРИЛЛИОНА ключей + SOTA v2 Kangaroo + 12-way HASH160 (#71 и a withheld third-party address).
   - Вместе с зачисткой Г2..З5 закрываются ВСЕ 50 из 50 клеток верхнего полуполя Y < 0.5 (100% зоны)!
 """
 
@@ -406,12 +406,12 @@ def run_double_operation():
         )
     print("-" * 88)
 
-    # Поклеточный проход SOTA v2 Kangaroo (#140) + 12-way HASH160 (#71 и a third-party address) по всем 30 клеткам:
+    # Поклеточный проход SOTA v2 Kangaroo (#140) + 12-way HASH160 (#71 и a withheld third-party address) по всем 30 клеткам:
     H160_P71 = hash160_to_u32_arr("f6f5431d25bbf7b12e8add9af5e3475c44a0a5b8")
     H160_198 = hash160_to_u32_arr("592fc3990026334c8c6fb2b9da457179cdb5c688")
-    with open("/home/user/withheld_pubkeys.txt", "r", encoding="utf-8") as f:
-        withheld_hex = [f.readline().strip() for _ in range(30)]
-    withheld_pts = [(int(h[2:66], 16), int(h[66:130], 16)) for h in withheld_hex]
+    with open("/home/user/third_party_pubkeys.txt", "r", encoding="utf-8") as f:
+        third_party_hex = [f.readline().strip() for _ in range(30)]
+    third_party_pts = [(int(h[2:66], 16), int(h[66:130], 16)) for h in third_party_hex]
 
     print("\nСводный рапорт по всем 30 северным и фланговым клеткам верхнего полуполя Y < 0.5:")
     print(
@@ -456,7 +456,7 @@ def run_double_operation():
         )
 
         ak256 = square_xy_to_key(256, fx, fy)
-        pt198 = point_add(withheld_pts[idx_c], scalar_mult(ak256 % N, G))
+        pt198 = point_add(third_party_pts[idx_c], scalar_mult(ak256 % N, G))
         lib.sqf_scan_window_12way_hash160(
             int_to_limbs(pt198[0]), int_to_limbs(pt198[1]),
             5_000, H160_198, ctypes.byref(out_o71), ctypes.byref(out_m71)

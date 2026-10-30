@@ -23,6 +23,20 @@ this codebase:
    only salted `blake2b` fingerprints (`registry.py`), so a compromise of the
    coordination database does not leak anyone's partial results.
 
+## What we deliberately do not publish
+
+Some material was written during the research phase and stays out of the public
+release, even though it is technically interesting:
+
+* scripts aimed at a specific third-party address holding a large balance from 2009
+  (not a puzzle; not ours) and the datasets they read — the code exists locally
+  but is not in this repository or its history;
+* any working exploit against a live service, including the public
+  `PHP2Shell` challenge — the repository ships analysis, never a payload.
+
+The rule is simple: if publishing it would let a stranger take someone else's
+money, it does not ship.
+
 ## Known limits, stated up front
 
 * **Nothing here breaks a 135-bit key.** `√(2^135) = 2^67.5` operations; at the

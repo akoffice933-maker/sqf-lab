@@ -30,7 +30,7 @@
   3. Проверяет все 30,000 точных целочисленных якорей * 8.594 млрд ключей = 257.82 ТРИЛЛИОНА КЛЮЧЕЙ
      движком sqf_batch_anchors_140 (M = 2^21, giant_radius_q = 1024) + роем SOTA v2 Kangaroo!
   4. Проводит точный 35-битный целочисленный штурм Puzzle #71 (на основе точных 35-битных X_70, Y_70
-     и старших/младших 35-битных срезов #135, #130, #69, #68, #67, #66) и кошелька a third-party address (<third_party>...).
+     и старших/младших 35-битных срезов #135, #130, #69, #68, #67, #66) и кошелька третьей стороны (исключён из публичного релиза).
 """
 
 import ctypes
@@ -430,11 +430,11 @@ def run_exact_integer_assault():
 
     # =========================================================================
     # ЧАСТЬ 3. ТОЧНЫЙ 35-БИТНЫЙ ЦЕЛОЧИСЛЕННЫЙ ШТУРМ PUZZLE #71 (h_X = 35, h_Y = 35)
-    # И 256-БИТНЫЙ ШТУРМ КОШЕЛЬКА a third-party address (<third-party address withheld>)
+    # И 256-БИТНЫЙ ШТУРМ КОШЕЛЬКА a withheld third-party address (<third-party address withheld>)
     # =========================================================================
     print("\n" + "=" * 116)
     print(" ЧАСТЬ 3. ТОЧНЫЙ 35-БИТНЫЙ ШТУРМ PUZZLE #71 (СОВПАДЕНИЕ РАЗРЯДНОСТИ h_X(70) = h_X(71) = 35 БИТ!)")
-    print(" И СИНХРОННЫЙ ШТУРМ КОШЕЛЬКА a third-party address (<third-party address withheld>)")
+    print(" И СИНХРОННЫЙ ШТУРМ КОШЕЛЬКА a withheld third-party address (<third-party address withheld>)")
     print("=" * 116)
 
     H160_P71 = hash160_to_u32_arr("f6f5431d25bbf7b12e8add9af5e3475c44a0a5b8")
@@ -460,9 +460,9 @@ def run_exact_integer_assault():
         ("Центроид гигантов #120..#135 в 35-битном квадрате #71", cx_int >> 35, cy_int >> 34),
     ]
 
-    with open("/home/user/withheld_pubkeys.txt", "r", encoding="utf-8") as f:
-        withheld_hex = [f.readline().strip() for _ in range(16)]
-    withheld_pts = [(int(h[2:66], 16), int(h[66:130], 16)) for h in withheld_hex]
+    with open("/home/user/third_party_pubkeys.txt", "r", encoding="utf-8") as f:
+        third_party_hex = [f.readline().strip() for _ in range(16)]
+    third_party_pts = [(int(h[2:66], 16), int(h[66:130], 16)) for h in third_party_hex]
 
     h160_swept = 0
     for idx_t, (label71, x71_c, y71_c) in enumerate(p71_exact_targets, 1):
@@ -477,14 +477,14 @@ def run_exact_integer_assault():
         if hit71 == 1:
             print(f"[!!!] НАЙДЕН КЛЮЧ PUZZLE #71: offset={out_o.value}, mode={out_m.value} от {hex(ak71)} [!!!]")
 
-        # Синхронно атакуем a third-party address (<third_party>...) с тем же 70-битным точным сдвигом относительно PubKey #idx_t кошелька:
-        pt198 = point_add(withheld_pts[idx_t - 1], pt71)
+        # Синхронно атакуем a withheld third-party address с тем же 70-битным точным сдвигом относительно PubKey #idx_t кошелька:
+        pt198 = point_add(third_party_pts[idx_t - 1], pt71)
         hit198 = lib.sqf_scan_window_12way_hash160(
             int_to_limbs(pt198[0]), int_to_limbs(pt198[1]),
             50_000, H160_198, ctypes.byref(out_o), ctypes.byref(out_m)
         )
         if hit198 == 1:
-            print(f"[!!!] НАЙДЕН КЛЮЧ a third-party address (<third_party>...): offset={out_o.value}, mode={out_m.value} [!!!]")
+            print(f"[!!!] НАЙДЕН КЛЮЧ a withheld third-party address: offset={out_o.value}, mode={out_m.value} [!!!]")
 
         keys_pair = 2 * 50_000 * 12
         h160_swept += keys_pair
@@ -511,7 +511,7 @@ def run_exact_integer_assault():
     print(f"  - Восстановлена точность координат (X_int, Y_int):  100% (все 70+69 бит в #140 и 80+79 бит в #160 без обнуления!)")
     print(f"  - Проверено точных 160-битных int-якорей:           30,000 узлов * 8.594 млрд = {total_exact_keys/1e12:.2f} ТРИЛЛИОНА ключей")
     print(f"  - Пробиты все 8 точных 3-битных веток #135 -> #140: {kang_ops_total:,d} прыжков SOTA Kangaroo ({kang_dps_total:,d} новых DPs)")
-    print(f"  - Проверено точных 35-битных сдвигов #70 -> #71:    {h160_swept:,d} ключей 12-way HASH160 (#71 + a third-party address)")
+    print(f"  - Проверено точных 35-битных сдвигов #70 -> #71:    {h160_swept:,d} ключей 12-way HASH160 (#71 + a withheld third-party address)")
     print(f"  - НОВЫЙ КУМУЛЯТИВНЫЙ ОХВАТ КАМПАНИИ:                {dp_db['total_sqf64_keys']:,d} ключей")
     print(f"                                                      ({dp_db['total_sqf64_keys']/1e15:.4f} КВАДРИЛЛИОНА КЛЮЧЕЙ!)")
     print("=" * 116)

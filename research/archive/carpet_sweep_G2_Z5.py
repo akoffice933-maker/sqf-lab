@@ -27,7 +27,7 @@
       3,000 якорей * 8.594 млрд ключей = 25,782,386,688,000 ключей (25.78 ТРИЛЛИОНА ключей)!
   - Дополнительно по всем 20 клеткам Г2..З5 проходят:
       * Рой SOTA v2 Kangaroo (K = 1.15) для флагмана #140 с сохранением Distinguished Points;
-      * 12-кратный GLV + Parity + Mirror HASH160 сканер для Puzzle #71 и кошелька a third-party address.
+      * 12-кратный GLV + Parity + Mirror HASH160 сканер для Puzzle #71 и кошелька третьей стороны (исключён из публичного релиза).
 """
 
 import ctypes
@@ -276,7 +276,7 @@ def run_carpet_sweep_G2_Z5():
         )
     print("-" * 114)
 
-    # 5. Поклеточная зачистка всех 20 клеток Г2..З5 роем SOTA v2 Kangaroo (#140) + 12-way HASH160 (#71 и a third-party address)
+    # 5. Поклеточная зачистка всех 20 клеток Г2..З5 роем SOTA v2 Kangaroo (#140) + 12-way HASH160 (#71 и a withheld third-party address)
     print("\n[Этап 3] Поклеточный рапорт зачистки всех 20 секторов Г2..З5 (SOTA v2 Kangaroo #140 + 12-way HASH160 #71 & 8k BTC):")
     print(
         f"{'Клетка':<6} | {'Диапазон X':<13} | {'Диапазон Y':<13} | {'Потопленные ранее':<22} | "
@@ -286,9 +286,9 @@ def run_carpet_sweep_G2_Z5():
 
     H160_P71 = hash160_to_u32_arr("f6f5431d25bbf7b12e8add9af5e3475c44a0a5b8")
     H160_198 = hash160_to_u32_arr("592fc3990026334c8c6fb2b9da457179cdb5c688")
-    with open("/home/user/withheld_pubkeys.txt", "r", encoding="utf-8") as f:
-        withheld_hex = [f.readline().strip() for _ in range(20)]
-    withheld_pts = [(int(h[2:66], 16), int(h[66:130], 16)) for h in withheld_hex]
+    with open("/home/user/third_party_pubkeys.txt", "r", encoding="utf-8") as f:
+        third_party_hex = [f.readline().strip() for _ in range(20)]
+    third_party_pts = [(int(h[2:66], 16), int(h[66:130], 16)) for h in third_party_hex]
 
     max_dps = 1024
     dp_xtags = (ctypes.c_uint64 * max_dps)()
@@ -352,7 +352,7 @@ def run_carpet_sweep_G2_Z5():
                 "type": "TAME" if dp_types[0] == 0 else "WILD",
             })
 
-        # 12-way HASH160 зачистка клетки для Puzzle #71 и a third-party address (<third_party>...)
+        # 12-way HASH160 зачистка клетки для Puzzle #71 и a withheld third-party address
         anchor_71 = square_xy_to_key(71, kx_foc, ky_foc)
         pt_71 = scalar_mult(anchor_71, G)
         out_o71 = ctypes.c_int64(0)
@@ -363,7 +363,7 @@ def run_carpet_sweep_G2_Z5():
         )
 
         anchor_256 = square_xy_to_key(256, kx_foc, ky_foc)
-        pt_198 = point_add(withheld_pts[idx_cell], scalar_mult(anchor_256 % N, G))
+        pt_198 = point_add(third_party_pts[idx_cell], scalar_mult(anchor_256 % N, G))
         lib.sqf_scan_window_12way_hash160(
             int_to_limbs(pt_198[0]), int_to_limbs(pt_198[1]),
             10_000, H160_198, ctypes.byref(out_o71), ctypes.byref(out_m71)

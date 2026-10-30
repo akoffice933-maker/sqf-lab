@@ -5,7 +5,7 @@
 """
 ПРОРЫВ ЗА 2 КВАДРИЛЛИОНА КЛЮЧЕЙ:
 Z-КРИВАЯ МОРТОНА (ЧЁТНЫЕ/НЕЧЁТНЫЕ БИТЫ) + 2-АДИЧЕСКИЙ ПОДЪЁМ ХЕНЗЕЛЯ (MOD 2^139 И MOD N)
-ОТ ВСКРЫТОГО PUZZLE #135 НАПРЯМУЮ К #140..#160, #71 И a third-party address
+ОТ ВСКРЫТОГО PUZZLE #135 НАПРЯМУЮ К #140..#160, #71 И a withheld third-party address
 ========================================================================================
 Почему появление ключа Puzzle #135 (k_135 = 0x6d9392a16883f90903d5f78da57af07eb2)
 полностью меняет алгебраическую экстраполяцию к #140:
@@ -442,9 +442,9 @@ def run_morton_and_hensel_campaign():
         kang_dps += out_w.value
         print(f"  [{idx_f}] {f_name:<46s} | +{out_o.value:,d} прыжков (+{out_w.value:>3d} DPs)")
 
-    # Часть 3: 2-адический Хензель и Z-кривая Мортона для Puzzle #71 (#67,#68,#69,#70 -> #71) и a third-party address
+    # Часть 3: 2-адический Хензель и Z-кривая Мортона для Puzzle #71 (#67,#68,#69,#70 -> #71) и a withheld third-party address
     print("\n" + "=" * 116)
-    print(" ЧАСТЬ 3. 2-АДИЧЕСКИЙ ПОДЪЁМ ХЕНЗЕЛЯ И Z-КВАДРАТ МОРТОНА ДЛЯ PUZZLE #71 (#68,#69,#70 -> #71) И a third-party address")
+    print(" ЧАСТЬ 3. 2-АДИЧЕСКИЙ ПОДЪЁМ ХЕНЗЕЛЯ И Z-КВАДРАТ МОРТОНА ДЛЯ PUZZLE #71 (#68,#69,#70 -> #71) И a withheld third-party address")
     print("=" * 116)
 
     H160_P71 = hash160_to_u32_arr("f6f5431d25bbf7b12e8add9af5e3475c44a0a5b8")
@@ -474,9 +474,9 @@ def run_morton_and_hensel_campaign():
         ("Дробно-линейный инвариант Мёбиуса mod N (#67..#70 -> #71)", (1 << 70) | (mobius_mod_next(k67, k68, k69, k70, N) & ((1 << 70) - 1))),
     ]
 
-    with open("/home/user/withheld_pubkeys.txt", "r", encoding="utf-8") as f:
-        withheld_hex = [f.readline().strip() for _ in range(10)]
-    withheld_pts = [(int(h[2:66], 16), int(h[66:130], 16)) for h in withheld_hex]
+    with open("/home/user/third_party_pubkeys.txt", "r", encoding="utf-8") as f:
+        third_party_hex = [f.readline().strip() for _ in range(10)]
+    third_party_pts = [(int(h[2:66], 16), int(h[66:130], 16)) for h in third_party_hex]
 
     h160_cnt = 0
     for idx_p, (lbl71, ak71) in enumerate(p71_hensel_targets, 1):
@@ -487,7 +487,7 @@ def run_morton_and_hensel_campaign():
             int_to_limbs(pt71[0]), int_to_limbs(pt71[1]),
             50_000, H160_P71, ctypes.byref(out_o), ctypes.byref(out_m)
         )
-        pt198 = point_add(withheld_pts[idx_p - 1], pt71)
+        pt198 = point_add(third_party_pts[idx_p - 1], pt71)
         lib.sqf_scan_window_12way_hash160(
             int_to_limbs(pt198[0]), int_to_limbs(pt198[1]),
             50_000, H160_198, ctypes.byref(out_o), ctypes.byref(out_m)

@@ -433,11 +433,11 @@ def run_part3_multideck_fleet_salvo():
 
 
 # ====================================================================================================
-# ЧАСТЬ 4. АУДИТ КАСАТЕЛЬНЫХ ЗАЦЕПОВ В БАЗЕ 15,509 DISTINGUISHED POINTS (#140) + 2D-РАДАР #71 / a third-party address
+# ЧАСТЬ 4. АУДИТ КАСАТЕЛЬНЫХ ЗАЦЕПОВ В БАЗЕ 15,509 DISTINGUISHED POINTS (#140) + 2D-РАДАР #71 / a withheld third-party address
 # ====================================================================================================
 def run_part4_dp_radar_and_71(multideck_keys_swept: int):
     print("\n" + "=" * 116)
-    print(" ЧАСТЬ 4. АУДИТ 15,509 DISTINGUISHED POINTS (SOTA v2 KANGAROO #140) И КРОССИНГОВЕР ПАЛУБ #71 / a third-party address")
+    print(" ЧАСТЬ 4. АУДИТ 15,509 DISTINGUISHED POINTS (SOTA v2 KANGAROO #140) И КРОССИНГОВЕР ПАЛУБ #71 / a withheld third-party address")
     print("=" * 116)
 
     dp_file = "/home/user/puzzle140_sota_dps.json"
@@ -522,7 +522,7 @@ def run_part4_dp_radar_and_71(multideck_keys_swept: int):
         checked_71 += W_half * 12
     dt_71 = time.time() - t0
 
-    print(f"\n  [Кроссинговер 4 палуб (#67, #68, #69, #70)^4 для Puzzle #71 + a third-party address]:")
+    print(f"\n  [Кроссинговер 4 палуб (#67, #68, #69, #70)^4 для Puzzle #71 + a withheld third-party address]:")
     print(f"    - Проверено всех 4^4 = {len(crossover_71)} комбинаций 4 палуб: {checked_71:,} ключей за {dt_71:.2f}s")
 
     prev_swept = dp_data.get("total_sqf64_keys", 0)
