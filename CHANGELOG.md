@@ -32,7 +32,8 @@ claims become measurements.
 * `sqflab.cli` — `addr`, `solve`, `bench`, `registry`, `p2g`, `battleship`.
 * `cpp/` — C++17/OpenMP engines with a portable `Makefile` (`NATIVE=0` for CI).
 * `apps/lottery/api.py` — reference HTTP pool with an end-to-end test.
-* 60 tests, GitHub Actions CI (Python 3.10–3.13 + native build).
+* 63 tests, GitHub Actions CI (Python 3.10–3.13 + native build), including a
+  parse guard for the workflow files themselves.
 * **Licensing:** MIT © 2026 `akoffice933-maker`, `license-files = ["LICENSE"]`
   (PEP 639, `License-Expression: MIT` in the wheel metadata), SPDX headers on all
   63 tracked Python files and all 6 C/C++ sources, a `LICENSES/MIT.txt` for
@@ -73,6 +74,13 @@ claims become measurements.
   operations and `MEcOps/s` are reported.
 * `p2g_3ltc_breakthroughs.py` became `sqflab.p2g`, with the Clue 2 decoder now
   asserted at import time.
+
+### CI
+
+* The first published `ci.yml` had an unquoted `": "` inside a step name, which
+  GitHub rejects at parse time: every run finished in the same second with zero
+  jobs. The name is quoted now, and `tests/test_workflows.py` fails the suite on
+  any workflow that does not parse or has a job without `runs-on`.
 
 ### Withheld from the public release
 

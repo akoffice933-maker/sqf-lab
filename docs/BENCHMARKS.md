@@ -62,7 +62,7 @@ is reported rather than smoothed away.
 
 ```bash
 python3 -m pip install -e ".[dev]"
-make test            # 60 tests
+make test            # 63 tests
 make native          # or: make native NATIVE=1 for a tuned local build
 make bench           # pure Python
 make bench-native    # native engines

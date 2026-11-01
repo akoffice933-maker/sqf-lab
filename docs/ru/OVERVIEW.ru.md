@@ -33,7 +33,7 @@
 
 ```bash
 python3 -m pip install -e ".[dev]"
-make test          # 60 тестов
+make test          # 63 тестов
 make native        # C++ движки
 make bench-native  # замер нативных решателей
 python3 -m sqflab p2g clue2

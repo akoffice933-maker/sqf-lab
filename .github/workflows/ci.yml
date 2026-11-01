@@ -50,7 +50,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends libgmp-dev
           g++ --version | head -1
-      - name: Build (NATIVE=0: no -march=native, portable numbers)
+      - name: "Build (NATIVE=0: no -march=native, portable numbers)"
         run: make -C cpp NATIVE=0
       - name: Install package
         run: python -m pip install -e ".[dev]"
