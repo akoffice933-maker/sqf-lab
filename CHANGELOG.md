@@ -25,6 +25,10 @@ claims become measurements.
 * `sqflab.battleship` — exact cell↔interval mapping, Morton cursor, wound radar
   with a birthday baseline.
 * `sqflab.p2g` — verified `path-to-greatness-3ltc` decoders and segment ledger.
+* `docs/FIELD-REPORT-KRACKPOT.md` (+ `docs/ru/…`) — audit of the `krackpot.io`
+  Bitcoin Puzzle #71 client, one bounded 2^24-key sweep (0 hits), and the measured
+  gap between a cached benchmark window (35.5 MKeys/s) and the real 2^70 floor
+  (133 kKeys/s).
 * `sqflab.cli` — `addr`, `solve`, `bench`, `registry`, `p2g`, `battleship`.
 * `cpp/` — C++17/OpenMP engines with a portable `Makefile` (`NATIVE=0` for CI).
 * `apps/lottery/api.py` — reference HTTP pool with an end-to-end test.
@@ -56,6 +60,10 @@ claims become measurements.
 * **Registry threading.** `sqlite3` connections created in one thread rejected
   use from HTTP worker threads; added `check_same_thread=False` plus an internal
   RLock around every statement.
+* **Registry widths above 63 bits.** `stats()` summed block widths with
+  `CAST(end_k AS INTEGER)`, which saturates at 64 bits: a 2^32-key block reported
+  a width of 1, and any 71- or 140-bit ledger was silently wrong. Widths are now
+  summed in Python from the raw bounds; the regression test uses `1 << 139`.
 
 ### Changed from the archived scripts
 
