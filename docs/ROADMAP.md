@@ -8,7 +8,7 @@
 - [x] persistent anti-duplicate registry + reference HTTP pool API
 - [x] `path-to-greatness-3ltc` verified decoders and segment ledger
 - [x] battleship scheduling model + wound-radar audit with a birthday baseline
-- [x] 59 tests, CI on Python 3.10–3.13, native build on Linux
+- [x] 60 tests, CI on Python 3.10–3.13, native build on Linux
 
 ## 0.2
 

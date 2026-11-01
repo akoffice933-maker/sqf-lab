@@ -28,7 +28,7 @@ claims become measurements.
 * `sqflab.cli` — `addr`, `solve`, `bench`, `registry`, `p2g`, `battleship`.
 * `cpp/` — C++17/OpenMP engines with a portable `Makefile` (`NATIVE=0` for CI).
 * `apps/lottery/api.py` — reference HTTP pool with an end-to-end test.
-* 59 tests, GitHub Actions CI (Python 3.10–3.13 + native build).
+* 60 tests, GitHub Actions CI (Python 3.10–3.13 + native build).
 * **Licensing:** MIT © 2026 `akoffice933-maker`, `license-files = ["LICENSE"]`
   (PEP 639, `License-Expression: MIT` in the wheel metadata), SPDX headers on all
   63 tracked Python files and all 6 C/C++ sources, a `LICENSES/MIT.txt` for
