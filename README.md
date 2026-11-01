@@ -207,8 +207,10 @@ MIT © 2026 **akoffice933-maker** — see [LICENSE](LICENSE).
 Every source file carries an SPDX header
 (`SPDX-License-Identifier: MIT`), and `LICENSES/MIT.txt` provides the licence
 text in the layout REUSE-based scanners expect, so attribution works without
-parsing prose. The [LICENSE](LICENSE) file also spells
-out the third-party situation: the `cpp/` engines link GMP (LGPL-3.0+) at build
-time only, and no GMP source is distributed here.
+parsing prose. The [LICENSE](LICENSE) file is the standard MIT text, unmodified, so GitHub,
+REUSE and SPDX scanners all recognise it; everything that is *not* covered by
+that grant (GMP, the in-tree research scripts, on-chain facts) is itemised in
+[`LICENSES/THIRD-PARTY-NOTICES.md`](LICENSES/THIRD-PARTY-NOTICES.md).
+
 
 Русская версия: [README.ru.md](README.ru.md).

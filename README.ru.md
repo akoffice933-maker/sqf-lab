@@ -172,8 +172,10 @@ MIT © 2026 **akoffice933-maker** — см. [LICENSE](LICENSE).
 Каждый исходный файл содержит SPDX-заголовок
 (`SPDX-License-Identifier: MIT`), а `LICENSES/MIT.txt` содержит текст лицензии в
 раскладке, которую ожидают REUSE-сканеры, — принадлежность определяется без
-разбора текста. В [LICENSE](LICENSE) отдельно
-описаны сторонние компоненты: движки `cpp/` линкуются с GMP (LGPL-3.0+) только
-на этапе сборки, исходники GMP в репозиторий не входят.
+разбора текста. Файл [LICENSE](LICENSE) содержит стандартный текст MIT без изменений, поэтому
+GitHub, REUSE и SPDX-сканеры его распознают; всё, что *не* покрыто этим
+грантом (GMP, исследовательские скрипты, данные блокчейна), перечислено в
+[`LICENSES/THIRD-PARTY-NOTICES.md`](LICENSES/THIRD-PARTY-NOTICES.md).
+
 
 English version: [README.md](README.md).
